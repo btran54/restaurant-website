@@ -7,11 +7,11 @@ import { X, MapPin, Clock, Phone } from 'lucide-react';
 // MODIFY ALL VALUES BELOW to match your restaurant's details
 
 const RESTAURANT_INFO = {
-  name: "Leung Noodle",                                    // MODIFY: Your restaurant name
-  tagline: "Authentic Asian Noodles & Soups",              // MODIFY: Your tagline/slogan
-  address: "Insert address",          // MODIFY: Your full address
-  phone: "(408) 622-8352",                                 // MODIFY: Your phone number
-  hours: "Mon-Sun: 10:00 AM - 9:00 PM"                     // MODIFY: Your operating hours
+  name: "Leung Noodle",
+  tagline: "Authentic Vietnamese Noodles",
+  address: "2859 Senter Rd, San Jose, CA, 95111",
+  phone: "(408) 622-8352",
+  hours: "Mon-Sun: 10:00 AM - 9:00 PM"
 };
 
 // ============================================================================
@@ -24,18 +24,18 @@ const MENU_DATA = {
   categories: [
     // CATEGORY 1: Signature Noodles
     {
-      name: "Signature Noodles",                           // MODIFY: Category name
+      name: "Signature Noodles",
       items: [
         {
-          id: 1,                                           // Keep unique - increment for new items
-          name: "Hu Tieu Nam Vang",                             // MODIFY: Item name
-          description: "Traditional Vietnamese beef noodle soup with aromatic herbs and spices", // MODIFY: Item description
-          basePrice: 12.99,                                // MODIFY: Base price
-          image: "🍜",                                      // MODIFY: Emoji or later replace with image URL
+          id: 1,
+          name: "Hu Tieu Nam Vang",
+          description: "Traditional Vietnamese beef noodle soup with aromatic herbs and spices",
+          basePrice: 12.99,
+          image: "🍜",
           customizations: {
-            noodleType: ["Rice Noodles", "Egg Noodles", "Glass Noodles"],     // MODIFY: Add/remove noodle options
-            protein: ["Beef Brisket", "Chicken", "Tofu", "Shrimp", "Mixed"],  // MODIFY: Add/remove protein options
-            veggies: ["Bean Sprouts", "Thai Basil", "Cilantro", "Green Onions", "Jalapeños", "Lime"] // MODIFY: Add/remove veggie options
+            noodleType: ["Rice Noodles", "Egg Noodles", "Glass Noodles"],
+            protein: ["Beef Brisket", "Chicken", "Tofu", "Shrimp", "Mixed"],
+            veggies: ["Bean Sprouts", "Thai Basil", "Cilantro", "Green Onions", "Jalapeños", "Lime"]
           }
         }
         // TO ADD MORE ITEMS: Copy the block above and modify the values
@@ -44,13 +44,13 @@ const MENU_DATA = {
     
     // CATEGORY 2: Appetizers
     {
-      name: "Appetizers",                                  // MODIFY: Category name
+      name: "Appetizers",
       items: [
         {
           id: 5,
-          name: "Siu Mai",                            // MODIFY: Item name
-          description: "Minced pork and shrimp dumplings steamed to perfection", // MODIFY: Item description
-          basePrice: 7.99,                                 // MODIFY: Price
+          name: "Siu Mai",
+          description: "Minced pork and shrimp dumplings steamed to perfection",
+          basePrice: 7.99,
           image: "🥬",
           customizations: {
             protein: ["Shrimp", "Tofu", "Pork", "Chicken"],
