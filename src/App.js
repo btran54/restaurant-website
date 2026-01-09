@@ -7,11 +7,11 @@ import { X, MapPin, Clock, Phone } from 'lucide-react';
 // MODIFY ALL VALUES BELOW to match your restaurant's details
 
 const RESTAURANT_INFO = {
-  name: "Noodle Haven",                                    // MODIFY: Your restaurant name
+  name: "Leung Noodle",                                    // MODIFY: Your restaurant name
   tagline: "Authentic Asian Noodles & Soups",              // MODIFY: Your tagline/slogan
-  address: "123 Main Street, San Jose, CA 95113",          // MODIFY: Your full address
-  phone: "(408) 555-0123",                                 // MODIFY: Your phone number
-  hours: "Mon-Sun: 11:00 AM - 9:00 PM"                     // MODIFY: Your operating hours
+  address: "Insert address",          // MODIFY: Your full address
+  phone: "(408) 622-8352",                                 // MODIFY: Your phone number
+  hours: "Mon-Sun: 10:00 AM - 9:00 PM"                     // MODIFY: Your operating hours
 };
 
 // ============================================================================
@@ -28,7 +28,7 @@ const MENU_DATA = {
       items: [
         {
           id: 1,                                           // Keep unique - increment for new items
-          name: "Classic Pho",                             // MODIFY: Item name
+          name: "Hu Tieu Nam Vang",                             // MODIFY: Item name
           description: "Traditional Vietnamese beef noodle soup with aromatic herbs and spices", // MODIFY: Item description
           basePrice: 12.99,                                // MODIFY: Base price
           image: "🍜",                                      // MODIFY: Emoji or later replace with image URL
@@ -36,42 +36,6 @@ const MENU_DATA = {
             noodleType: ["Rice Noodles", "Egg Noodles", "Glass Noodles"],     // MODIFY: Add/remove noodle options
             protein: ["Beef Brisket", "Chicken", "Tofu", "Shrimp", "Mixed"],  // MODIFY: Add/remove protein options
             veggies: ["Bean Sprouts", "Thai Basil", "Cilantro", "Green Onions", "Jalapeños", "Lime"] // MODIFY: Add/remove veggie options
-          }
-        },
-        {
-          id: 2,
-          name: "Spicy Dan Dan",                           // MODIFY: Item name
-          description: "Sichuan-style noodles with chili oil, sesame paste, and preserved vegetables", // MODIFY: Description
-          basePrice: 13.99,                                // MODIFY: Price
-          image: "🌶️",                                      // MODIFY: Emoji
-          customizations: {
-            noodleType: ["Thick Wheat Noodles", "Thin Wheat Noodles", "Rice Noodles"], // MODIFY: Options
-            protein: ["Ground Pork", "Ground Chicken", "Crispy Tofu", "None"],
-            veggies: ["Bok Choy", "Scallions", "Pickled Mustard Greens", "Cucumber", "Peanuts"]
-          }
-        },
-        {
-          id: 3,
-          name: "Pad Thai",                                // MODIFY: Item name
-          description: "Stir-fried rice noodles with tamarind sauce, egg, and peanuts",
-          basePrice: 11.99,                                // MODIFY: Price
-          image: "🥜",
-          customizations: {
-            noodleType: ["Rice Noodles", "Glass Noodles"],
-            protein: ["Shrimp", "Chicken", "Tofu", "Mixed Seafood"],
-            veggies: ["Bean Sprouts", "Green Onions", "Carrots", "Cabbage", "Lime", "Peanuts"]
-          }
-        },
-        {
-          id: 4,
-          name: "Ramen Bowl",                              // MODIFY: Item name
-          description: "Rich tonkotsu broth with tender chashu pork and marinated soft-boiled egg",
-          basePrice: 14.99,                                // MODIFY: Price
-          image: "🍥",
-          customizations: {
-            noodleType: ["Thin Ramen", "Thick Ramen", "Udon"],
-            protein: ["Chashu Pork", "Chicken", "Soft Boiled Egg", "Tofu", "Mixed"],
-            veggies: ["Nori", "Green Onions", "Bamboo Shoots", "Corn", "Mushrooms", "Bean Sprouts"]
           }
         }
         // TO ADD MORE ITEMS: Copy the block above and modify the values
@@ -84,8 +48,8 @@ const MENU_DATA = {
       items: [
         {
           id: 5,
-          name: "Spring Rolls",                            // MODIFY: Item name
-          description: "Fresh rice paper rolls with shrimp, herbs, and vermicelli",
+          name: "Siu Mai",                            // MODIFY: Item name
+          description: "Minced pork and shrimp dumplings steamed to perfection", // MODIFY: Item description
           basePrice: 7.99,                                 // MODIFY: Price
           image: "🥬",
           customizations: {
@@ -93,29 +57,12 @@ const MENU_DATA = {
             veggies: ["Lettuce", "Mint", "Cilantro", "Carrots", "Cucumber"]
           }
         },
-        {
-          id: 6,
-          name: "Dumplings",                               // MODIFY: Item name (e.g., change to "Fries", "Wings", etc.)
-          description: "Pan-fried or steamed dumplings with ginger-soy dipping sauce", // MODIFY: Description
-          basePrice: 8.99,                                 // MODIFY: Price
-          image: "🥟",                                      // MODIFY: Emoji
-          customizations: {
-            protein: ["Pork & Chive", "Chicken", "Vegetable", "Shrimp"], // MODIFY: Options
-            style: ["Pan-Fried", "Steamed"]                // MODIFY: Cooking style options
-          }
-        }
         // TO ADD MORE APPETIZERS: Copy the block above and modify
       ]
     }
     // TO ADD MORE CATEGORIES: Copy one of the category blocks above and modify
   ]
 };
-
-// ============================================================================
-// SECTION 3: MAIN APP COMPONENT
-// ============================================================================
-// This section handles all the interactive functionality
-// You generally don't need to modify this unless you want to change behavior
 
 const RestaurantWebsite = () => {
   // State management for modal and customizations
@@ -174,17 +121,15 @@ const RestaurantWebsite = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',  // MODIFY: Background gradient colors
+      background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
       color: '#f5f5f5',
-      fontFamily: '"Crimson Pro", Georgia, serif'  // MODIFY: Change font if desired
+      fontFamily: '"Crimson Pro", Georgia, serif'
     }}>
       {/* Header with restaurant name and logo */}
       <header style={{
         background: 'linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%)',
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid rgba(255,255,255,0.1)',
-        position: 'sticky',
-        top: 0,
         zIndex: 100,
         animation: 'slideDown 0.6s ease-out'
       }}>
