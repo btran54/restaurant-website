@@ -122,14 +122,14 @@ const RestaurantWebsite = () => {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
-      color: '#f5f5f5',
+      color: '#2d2d2d',
       fontFamily: '"Crimson Pro", Georgia, serif'
     }}>
       {/* Header with restaurant name and logo */}
       <header style={{
-        background: 'linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%)',
+        background: 'linear-gradient(180deg, rgba(245,241,232,0.95) 0%, rgba(250,247,242,0.9) 100%)',
         backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(255,255,255,0.1)',
+        borderBottom: '1px solid rgba(210,195,170,0.3)',        
         zIndex: 100,
         animation: 'slideDown 0.6s ease-out'
       }}>
@@ -183,8 +183,8 @@ const RestaurantWebsite = () => {
           ============================================================================
           Address, hours, and phone number bar */}
       <div style={{
-        background: 'rgba(255, 107, 107, 0.1)',  // MODIFY: Info bar background color
-        borderBottom: '1px solid rgba(255, 107, 107, 0.2)',
+        background: 'rgba(210, 180, 140, 0.15)',  // MODIFY: Info bar background color
+        borderBottom: '1px solid rgba(210, 180, 140, 0.3)',
         padding: '1rem 2rem',
         animation: 'fadeIn 0.8s ease-out 0.2s both'
       }}>
@@ -282,13 +282,13 @@ const RestaurantWebsite = () => {
               style={{
                 padding: '0.75rem 2rem',
                 background: activeCategory === index 
-                  ? 'linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%)'  // MODIFY: Active tab color
-                  : 'rgba(255,255,255,0.05)',
+                  ? 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)'  // MODIFY: Active tab color
+                  : 'rgba(210,195,170,0.2)',
                 border: activeCategory === index 
                   ? 'none'
-                  : '1px solid rgba(255,255,255,0.1)',
+                  : '1px solid rgba(139,119,101,0.3)',
                 borderRadius: '50px',
-                color: activeCategory === index ? '#fff' : '#aaa',
+                color: activeCategory === index ? '#fff' : '#5d4e37',
                 fontSize: '1rem',
                 fontWeight: activeCategory === index ? '500' : '300',
                 cursor: 'pointer',
@@ -302,14 +302,14 @@ const RestaurantWebsite = () => {
               }}
               onMouseEnter={(e) => {
                 if (activeCategory !== index) {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
+                  e.currentTarget.style.background = 'rgba(210,180,140,0.3)';
+                  e.currentTarget.style.borderColor = 'rgba(139,119,101,0.4)';
                 }
               }}
               onMouseLeave={(e) => {
                 if (activeCategory !== index) {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                  e.currentTarget.style.background = 'rgba(210,195,170,0.2)';
+                  e.currentTarget.style.borderColor = 'rgba(139,119,101,0.3)';
                 }
               }}
             >
@@ -330,8 +330,8 @@ const RestaurantWebsite = () => {
               key={item.id}
               onClick={() => openModal(item)}
               style={{
-                background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',  // MODIFY: Card background
-                border: '1px solid rgba(255,255,255,0.1)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(245,241,232,0.6) 100%)',  // MODIFY: Card background
+                border: '1px solid rgba(210,195,170,0.4)',
                 borderRadius: '20px',
                 padding: '2rem',
                 cursor: 'pointer',
@@ -342,15 +342,14 @@ const RestaurantWebsite = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
-                e.currentTarget.style.boxShadow = '0 20px 40px rgba(255, 107, 107, 0.2)';  // MODIFY: Hover shadow color
-                e.currentTarget.style.borderColor = 'rgba(255, 107, 107, 0.5)';
+                e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 119, 101, 0.2)';  // MODIFY: Hover shadow color
+                e.currentTarget.style.borderColor = 'rgba(139, 119, 101, 0.6)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0) scale(1)';
                 e.currentTarget.style.boxShadow = 'none';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-              }}
-            >
+                e.currentTarget.style.borderColor = 'rgba(210,195,170,0.4)';
+              }}            >
               {/* Item image/emoji */}
               <div style={{
                 fontSize: '3rem',
@@ -365,7 +364,7 @@ const RestaurantWebsite = () => {
                 fontSize: '1.5rem',
                 fontWeight: '400',
                 marginBottom: '0.5rem',
-                color: '#fff'
+                color: '#3d3d3d'
               }}>
                 {item.name}
               </h3>
@@ -373,7 +372,7 @@ const RestaurantWebsite = () => {
               {/* Item description */}
               <p style={{
                 fontSize: '0.95rem',
-                color: '#aaa',
+                color: '#5d4e37',
                 lineHeight: '1.6',
                 marginBottom: '1rem',
                 fontFamily: '"Inter", sans-serif'
@@ -385,7 +384,7 @@ const RestaurantWebsite = () => {
               <div style={{
                 fontSize: '1.5rem',
                 fontWeight: '600',
-                color: '#ff6b6b',  // MODIFY: Price color
+                color: '#8B6F47',   // MODIFY: Price color
                 fontFamily: '"Inter", sans-serif'
               }}>
                 ${item.basePrice.toFixed(2)}
@@ -407,7 +406,7 @@ const RestaurantWebsite = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(0, 0, 0, 0.9)',  // MODIFY: Modal backdrop color/opacity
+            background: 'rgba(0, 0, 0, 0.7)',  // MODIFY: Modal backdrop color/opacity            
             backdropFilter: 'blur(10px)',
             display: 'flex',
             alignItems: 'center',
@@ -421,14 +420,14 @@ const RestaurantWebsite = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%)',  // MODIFY: Modal background
+              background: 'linear-gradient(135deg, #FAF7F2 0%, #F5F1E8 100%)',  // MODIFY: Modal background
               borderRadius: '30px',
               maxWidth: '600px',
               width: '100%',
               maxHeight: '90vh',
               overflowY: 'auto',
               position: 'relative',
-              border: '1px solid rgba(255,255,255,0.1)',
+              border: '1px solid rgba(139,119,101,0.3)',
               boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
               animation: 'zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
@@ -453,11 +452,11 @@ const RestaurantWebsite = () => {
                 zIndex: 10
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 107, 107, 0.3)';
+                e.currentTarget.style.background = 'rgba(139, 119, 101, 0.3)';
                 e.currentTarget.style.transform = 'rotate(90deg)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                e.currentTarget.style.background = 'rgba(210,195,170,0.2)';
                 e.currentTarget.style.transform = 'rotate(0deg)';
               }}
             >
@@ -474,13 +473,13 @@ const RestaurantWebsite = () => {
                   fontSize: '2rem',
                   fontWeight: '400',
                   marginBottom: '0.5rem',
-                  color: '#fff'
+                  color: '#3d3d3d'
                 }}>
                   {selectedItem.name}
                 </h2>
                 <p style={{
                   fontSize: '1rem',
-                  color: '#aaa',
+                  color: '#5d4e37',
                   lineHeight: '1.6',
                   fontFamily: '"Inter", sans-serif'
                 }}>
@@ -498,7 +497,7 @@ const RestaurantWebsite = () => {
                         fontSize: '1.1rem',
                         fontWeight: '500',
                         marginBottom: '1rem',
-                        color: '#ff6b6b',  // MODIFY: Category label color
+                        color: '#8B6F47',  // MODIFY: Category label color
                         textTransform: 'capitalize',
                         fontFamily: '"Inter", sans-serif',
                         letterSpacing: '0.05em'
@@ -526,11 +525,11 @@ const RestaurantWebsite = () => {
                                 alignItems: 'center',
                                 padding: '1rem',
                                 background: isSelected 
-                                  ? 'linear-gradient(135deg, rgba(255, 107, 107, 0.2) 0%, rgba(255, 135, 135, 0.2) 100%)'  // MODIFY: Selected option background
-                                  : 'rgba(255,255,255,0.05)',
+                                  ? 'linear-gradient(135deg, rgba(196, 154, 108, 0.3) 0%, rgba(212, 175, 122, 0.3) 100%)'  // MODIFY: Selected option background
+                                  : 'rgba(245,241,232,0.5)',
                                 border: isSelected 
-                                  ? '2px solid #ff6b6b'  // MODIFY: Selected option border color
-                                  : '1px solid rgba(255,255,255,0.1)',
+                                  ? '2px solid #8B6F47'  // MODIFY: Selected option border color
+                                  : '1px solid rgba(210,195,170,0.4)',
                                 borderRadius: '12px',
                                 cursor: 'pointer',
                                 transition: 'all 0.3s ease',
@@ -539,14 +538,14 @@ const RestaurantWebsite = () => {
                               }}
                               onMouseEnter={(e) => {
                                 if (!isSelected) {
-                                  e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
-                                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
+                                  e.currentTarget.style.background = 'rgba(210,195,170,0.4)';
+                                  e.currentTarget.style.borderColor = 'rgba(139,119,101,0.5)';
                                 }
                               }}
                               onMouseLeave={(e) => {
                                 if (!isSelected) {
-                                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                                  e.currentTarget.style.background = 'rgba(245,241,232,0.5)';
+                                  e.currentTarget.style.borderColor = 'rgba(210,195,170,0.4)';
                                 }
                               }}
                             >
@@ -559,7 +558,7 @@ const RestaurantWebsite = () => {
                                 onChange={() => handleCustomizationChange(category, option)}
                                 style={{ marginRight: '0.75rem', cursor: 'pointer' }}
                               />
-                              <span style={{ color: isSelected ? '#fff' : '#ddd' }}>
+                              <span style={{ color: isSelected ? '#3d3d3d' : '#5d4e37' }}>
                                 {option}
                               </span>
                             </label>
@@ -577,7 +576,7 @@ const RestaurantWebsite = () => {
                   width: '100%',
                   padding: '1.25rem',
                   marginTop: '2rem',
-                  background: 'linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%)',  // MODIFY: Button color
+                  background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',  // MODIFY: Button color
                   border: 'none',
                   borderRadius: '15px',
                   color: '#fff',
@@ -588,17 +587,17 @@ const RestaurantWebsite = () => {
                   fontFamily: '"Inter", sans-serif',
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase',
-                  boxShadow: '0 10px 30px rgba(255, 107, 107, 0.3)'
+                  boxShadow: '0 10px 30px rgba(139, 119, 101, 0.3)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 15px 40px rgba(255, 107, 107, 0.4)';
+                  e.currentTarget.style.boxShadow = '0 15px 40px rgba(139, 119, 101, 0.4)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(255, 107, 107, 0.3)';
-                }}
-              >
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(139, 119, 101, 0.3)';
+                }}              
+                >
                 Add to Order • ${calculatePrice()}
               </button>
             </div>
@@ -611,14 +610,14 @@ const RestaurantWebsite = () => {
           ============================================================================
           Bottom copyright section */}
       <footer style={{
-        borderTop: '1px solid rgba(255,255,255,0.1)',
+        borderTop: '1px solid rgba(210,195,170,0.3)',
         padding: '3rem 2rem',
         textAlign: 'center',
-        background: 'rgba(0,0,0,0.3)',
-        marginTop: '4rem'
+        background: 'rgba(237,232,220,0.5)',
+        marginTop: '4rem'      
       }}>
         <p style={{
-          color: '#888',  // MODIFY: Footer text color
+          color: '#8B7355',  // MODIFY: Footer text color
           fontSize: '0.9rem',
           fontFamily: '"Inter", sans-serif'
         }}>
