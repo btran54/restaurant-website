@@ -226,7 +226,7 @@ const RestaurantWebsite = () => {
           </a>
           
           {/* Operating hours */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#ddd' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#ff6b6b' }}>
             <Clock size={18} />
             <span>{RESTAURANT_INFO.hours}</span>
           </div>
