@@ -43,78 +43,89 @@ const MENU_DATA = {
           name: "Nam Vang",
           description: "Sliced pork, grounded pork, liver, heart, quail egg, shrimp, squid, fried garlic, green onion, cilantro",
           basePrice: 15.95,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 2,
           name: "Dac Biet",
           description: "Saigon shrimp & pork (#1) with a bone marrow",
           basePrice: 16.95,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 3,
           name: "Do Bien",
-          description: "Shrimp, squid, fried garlic, green onionm, cilantro",
+          description: "Shrimp, squid, fried garlic, green onion, cilantro",
           basePrice: 16.95,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 4,
           name: "Trieu Chau",
           description: "Shrimp, squid, liver, heart, pork slices, meat ball, fried onion, green onion, cilantro, chives",
           basePrice: 16.95,
-          image: "🍜",
-          
+          image: "🍜"
+        },
+        {
           id: 5,
           name: "Suon Non",
           description: "Pork spareribs, carrot, fried onion, green onion, cilantro, chives",
           basePrice: 15.95,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 6,
           name: "Sui Cao",
           description: "Shrimp wonton, fried onion, green onion, cilantro, chives",
           basePrice: 16.50,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 7,
           name: "Hoanh Thanh",
           description: "Wonton, BBQ pork slices, fried onion, green onion, cilantro, chives",
           basePrice: 16.50,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 8,
           name: "Xa Xiu",
           description: "BBQ pork slices, fried onion, green onion, cilantro, chives",
           basePrice: 15.95,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 9,
           name: "Gio Heo",
           description: "Pork hock, pork slices, fried onion, green onion, cilantro, chives",
           basePrice: 15.95,
-          image: "🍜",
-          
+          image: "🍜"
+        },
+        {
           id: 10,
           name: "Ga Xe",
           description: "Shredded chicken, fried garlic, green onion, cilantro",
           basePrice: 15.95,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 11,
           name: "Bo Vien",
           description: "Beef meatballs, fried onion, green onion, cilantro, chives",
           basePrice: 15.95,
-          image: "🍜",
-
+          image: "🍜"
+        },
+        {
           id: 12,
           name: "Hoanh Thanh La",
-          description:"Wonton skin, mini meat ball, dried shrimp, grounded pork , fried onion, green onion, cilantro, chives",
+          description: "Wonton skin, mini meat ball, dried shrimp, grounded pork, fried onion, green onion, cilantro, chives",
           basePrice: 15.95,
           image: "🍜"
         }
         // TO ADD MORE ITEMS: Copy the block above and modify the values
       ]
     },
-    
+
     // CATEGORY 2: Appetizers
     {
       name: "Appetizers",
@@ -124,56 +135,64 @@ const MENU_DATA = {
           name: "Xiu Mai (Meat Ball)",
           description: "Meat ball, cilantro, green onion, fried onion",
           basePrice: 6.25,
-          image: "🍢",
-
+          image: "🍢"
+        },
+        {
           id: 14,
-          name: "Xi Quach(4 pcs) (Bone Marrow Soup)",
-          description: "Bone marrow(4), cilantro, fried garlic, green onion",
+          name: "Xi Quach (4 pcs) (Bone Marrow Soup)",
+          description: "Bone marrow (4), cilantro, fried garlic, green onion",
           basePrice: 13.75,
-          image: "🍲",
-
+          image: "🍲"
+        },
+        {
           id: 15,
-          name: "Xi Quach(1 pcs) (Bone Marrow Soup)",
-          description: "Bone marrow(1), cilantro, fried garlic, green onion",
+          name: "Xi Quach (1 pc) (Bone Marrow Soup)",
+          description: "Bone marrow (1), cilantro, fried garlic, green onion",
           basePrice: 3.75,
-          image: "🍲",
-          
+          image: "🍲"
+        },
+        {
           id: 16,
           name: "Soup Bo Vien (Beef Meatball Soup)",
           description: "Beef meatball, cilantro, fried onion, green onion",
           basePrice: 6.75,
-          image: "🍲",
-
+          image: "🍲"
+        },
+        {
           id: 17,
           name: "Ha Cao Chien (Fried Shrimp Dumplings)",
           description: "",
           basePrice: 7.75,
-          image: "🥟",
-
+          image: "🥟"
+        },
+        {
           id: 18,
           name: "Sui Cao Chien (Fried Shrimp Wonton)",
           description: "",
           basePrice: 7.75,
-          image: "🥟",
-
+          image: "🥟"
+        },
+        {
           id: 19,
           name: "Hoanh Thanh Chien (Fried Pork Wonton)",
           description: "",
           basePrice: 7.75,
-          image: "🥟",
-
+          image: "🥟"
+        },
+        {
           id: 20,
           name: "Cha Gio Chien (Fried Egg Rolls)",
           description: "",
           basePrice: 7.75,
-          image: "🥟",
-
+          image: "🥟"
+        },
+        {
           id: 21,
           name: "Banh Quay (Chinese Donut)",
           description: "",
           basePrice: 2.75,
-          image: "🥟",
-        },
+          image: "🥟"
+        }
         // TO ADD MORE APPETIZERS: Copy the block above and modify
       ]
     },
@@ -185,56 +204,65 @@ const MENU_DATA = {
           name: "Cafe Sua Da (Vietnamese Iced Coffee)",
           description: "",
           basePrice: 5.50,
-          image: "☕",
-
+          image: "☕"
+        },
+        {
           id: 23,
           name: "Bong Cuc (Herbal Chrysanthemum Tea)",
           description: "",
           basePrice: 5.50,
-          image: "🍵",
-
+          image: "🍵"
+        },
+        {
           id: 24,
           name: "Mia Lao (Herbal Sugarcane Juice)",
           description: "",
           basePrice: 5.50,
-          image: "🥤",
-
+          image: "🥤"
+        },
+        {
           id: 25,
           name: "Rong Bien (Herbal Seaweed Drink)",
           description: "",
           basePrice: 5.50,
-          image: "🧃",
-
+          image: "🧃"
+        },
+        {
           id: 26,
           name: "7-Up Tac Muoi (Salted Plum 7-Up)",
           description: "",
           basePrice: 5.50,
-          image: "🥤",
-
+          image: "🥤"
+        },
+        {
           id: 27,
           name: "Tra Chanh (Lemon Iced Tea)",
           description: "",
           basePrice: 5.50,
-          image: "🍹",
-
+          image: "🍹"
+        },
+        {
           id: 28,
           name: "Mang Cau Dam (Mashed Soursop Drink)",
           description: "",
           basePrice: 5.50,
-          image: "🍹",
-
+          image: "🍹"
+        },
+        {
           id: 29,
           name: "Trai Dua (Fresh Coconut)",
           description: "",
           basePrice: 5.50,
-          image: "🥥",
-
+          image: "🥥"
+        },
+        {
           id: 30,
           name: "Soda",
           description: "",
           basePrice: 2.50,
-          image: "🥤",
-
+          image: "🥤"
+        },
+        {
           id: 31,
           name: "Tra Nong (Hot/Iced Tea)",
           description: "",
