@@ -23,6 +23,11 @@ const RESTAURANT_INFO = {
       phone: "(408) 622-8352",  // MODIFY: Phone for location 2
       hours: "Mon-Sun: 10:00 AM - 9:00 PM"  // MODIFY: Hours for location 2
     }
+  ],
+  // Restaurant storefront images
+  galleryImages: [
+    "/images/gallery/senter.jpg",         // Senter Road location
+    "/images/gallery/silver-creek.jpg"    // Silver Creek location
   ]
 };
 
@@ -875,7 +880,68 @@ const RestaurantWebsite = () => {
       )}
 
       {/* ============================================================================
-          SECTION 8: FOOTER
+          SECTION 8: PHOTO GALLERY
+          ============================================================================
+          Restaurant images section */}
+      <section style={{
+        maxWidth: '1200px',
+        margin: '4rem auto',
+        padding: '0 2rem'
+      }}>
+        <h2 style={{
+          fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+          fontWeight: '300',
+          textAlign: 'center',
+          marginBottom: '3rem',
+          color: '#3d3d3d',
+          letterSpacing: '0.05em'
+        }}>
+          Our Restaurant
+        </h2>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '2rem',
+          animation: 'fadeIn 1s ease-out'
+        }}>
+          {RESTAURANT_INFO.galleryImages.map((imageUrl, index) => (
+            <div
+              key={index}
+              style={{
+                borderRadius: '20px',
+                overflow: 'hidden',
+                boxShadow: '0 10px 30px rgba(139, 119, 101, 0.2)',
+                transition: 'all 0.4s ease',
+                cursor: 'pointer',
+                animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 119, 101, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                e.currentTarget.style.boxShadow = '0 10px 30px rgba(139, 119, 101, 0.2)';
+              }}
+            >
+              <img
+                src={imageUrl}
+                alt={`${RESTAURANT_INFO.name} - Photo ${index + 1}`}
+                style={{
+                  width: '100%',
+                  height: '300px',
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ============================================================================
+          SECTION 9: FOOTER
           ============================================================================
           Bottom copyright section */}
       <footer style={{
@@ -883,7 +949,7 @@ const RestaurantWebsite = () => {
         padding: '3rem 2rem',
         textAlign: 'center',
         background: 'rgba(237,232,220,0.5)',
-        marginTop: '4rem'      
+        marginTop: '4rem'
       }}>
         <p style={{
           color: '#8B7355',  // MODIFY: Footer text color
@@ -895,7 +961,7 @@ const RestaurantWebsite = () => {
       </footer>
 
       {/* ============================================================================
-          SECTION 9: ANIMATIONS & STYLES
+          SECTION 10: ANIMATIONS & STYLES
           ============================================================================
           CSS animations and global styles */}
       <style>{`
