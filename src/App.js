@@ -9,10 +9,21 @@ import { X, MapPin, Clock, Phone } from 'lucide-react';
 const RESTAURANT_INFO = {
   name: "Leung Noodle",
   tagline: "Authentic Vietnamese Noodles",
-  address: "2859 Senter Rd, San Jose, CA, 95111",
-  phone: "(408) 705-9848",
-  hours: "Mon-Sun: 10:00 AM - 9:00 PM",
-  squareUrl: "https://leung-noodle.square.site"
+  squareUrl: "https://leung-noodle.square.site",
+  locations: [
+    {
+      name: "Senter Road Location",  // MODIFY: Name for location 1
+      address: "2859 Senter Rd, San Jose, CA, 95111",
+      phone: "(408) 705-9848",
+      hours: "Mon-Sun: 10:00 AM - 9:00 PM"
+    },
+    {
+      name: "Silver Creek Location",  // MODIFY: Name for location 2
+      address: "3005 Silver Creek Rd, San Jose, CA, 95121",  // MODIFY: Address for location 2
+      phone: "(408) 622-8352",  // MODIFY: Phone for location 2
+      hours: "Mon-Sun: 10:00 AM - 9:00 PM"  // MODIFY: Hours for location 2
+    }
+  ]
 };
 
 // ============================================================================
@@ -182,7 +193,7 @@ const RestaurantWebsite = () => {
       {/* ============================================================================
           SECTION 5: INFO BAR
           ============================================================================
-          Address, hours, and phone number bar */}
+          Address, hours, and phone number bar - displays all locations */}
       <div style={{
         background: 'rgba(210, 180, 140, 0.15)',  // MODIFY: Info bar background color
         borderBottom: '1px solid rgba(210, 180, 140, 0.3)',
@@ -193,100 +204,121 @@ const RestaurantWebsite = () => {
           maxWidth: '1200px',
           margin: '0 auto',
           display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '2rem',
-          fontSize: '0.95rem',
-          fontFamily: '"Inter", sans-serif'
+          flexDirection: 'column',
+          gap: '1.5rem'
         }}>
-          {/* Clickable address - opens in user's map app */}
-          <a
-            href={`https://maps.google.com/?q=${encodeURIComponent(RESTAURANT_INFO.address)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              color: '#ff6b6b',  // MODIFY: Link color
-              textDecoration: 'none',
-              transition: 'all 0.3s ease',
-              cursor: 'pointer'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#ffd93d';  // MODIFY: Hover color
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#ff6b6b';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
-          >
-            <MapPin size={18} />
-            <span>{RESTAURANT_INFO.address}</span>
-          </a>
-          
-          {/* Operating hours */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#ff6b6b' }}>
-            <Clock size={18} />
-            <span>{RESTAURANT_INFO.hours}</span>
+          {/* Map through all locations and display each one */}
+          {RESTAURANT_INFO.locations.map((location, index) => (
+            <div
+              key={index}
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                gap: '2rem',
+                fontSize: '0.95rem',
+                fontFamily: '"Inter", sans-serif',
+                paddingBottom: index < RESTAURANT_INFO.locations.length - 1 ? '1.5rem' : '0',
+                borderBottom: index < RESTAURANT_INFO.locations.length - 1 ? '1px solid rgba(210, 180, 140, 0.2)' : 'none'
+              }}
+            >
+              {/* Clickable address - opens in user's map app */}
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(location.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: '#ff6b6b',  // MODIFY: Link color
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#ffd93d';  // MODIFY: Hover color
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#ff6b6b';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <MapPin size={18} />
+                <span>{location.address}</span>
+              </a>
+
+              {/* Operating hours */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#ff6b6b' }}>
+                <Clock size={18} />
+                <span>{location.hours}</span>
+              </div>
+
+              {/* Clickable phone number */}
+              <a
+                href={`tel:${location.phone}`}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: '#ff6b6b',  // MODIFY: Phone link color
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#ffd93d';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#ff6b6b';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <Phone size={18} />
+                <span>{location.phone}</span>
+              </a>
+            </div>
+          ))}
+
+          {/* Order Online button - centered below all locations */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '0.5rem'
+          }}>
+            <a
+              href={RESTAURANT_INFO.squareUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '0.5rem 1.5rem',
+                background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',
+                borderRadius: '50px',
+                color: '#fff',
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '0.95rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 15px rgba(139, 119, 101, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(139, 119, 101, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(139, 119, 101, 0.3)';
+              }}
+            >
+              🛒 Order Online
+            </a>
           </div>
-          
-          {/* Clickable phone number */}
-          <a
-            href={`tel:${RESTAURANT_INFO.phone}`}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              color: '#ff6b6b',  // MODIFY: Phone link color
-              textDecoration: 'none',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#ffd93d';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#ff6b6b';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
->
-            <Phone size={18} />
-            <span>{RESTAURANT_INFO.phone}</span>
-          </a>
-          
-          <a
-            href={RESTAURANT_INFO.squareUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: '0.5rem 1.5rem',
-              background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',
-              borderRadius: '50px',
-              color: '#fff',
-              textDecoration: 'none',
-              fontWeight: '600',
-              fontSize: '0.95rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              transition: 'all 0.3s ease',
-              boxShadow: '0 4px 15px rgba(139, 119, 101, 0.3)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 6px 20px rgba(139, 119, 101, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(139, 119, 101, 0.3)';
-            }}
-          >
-            🛒 Order Online
-          </a>
         </div>
       </div>
 
