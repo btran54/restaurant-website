@@ -11,7 +11,8 @@ const RESTAURANT_INFO = {
   tagline: "Authentic Vietnamese Noodles",
   address: "2859 Senter Rd, San Jose, CA, 95111",
   phone: "(408) 705-9848",
-  hours: "Mon-Sun: 10:00 AM - 9:00 PM"
+  hours: "Mon-Sun: 10:00 AM - 9:00 PM",
+  squareUrl: "https://leung-noodle.square.site"
 };
 
 // ============================================================================
@@ -250,9 +251,41 @@ const RestaurantWebsite = () => {
               e.currentTarget.style.color = '#ff6b6b';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
-          >
+>
             <Phone size={18} />
             <span>{RESTAURANT_INFO.phone}</span>
+          </a>
+          
+          <a
+            href={RESTAURANT_INFO.squareUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: '0.5rem 1.5rem',
+              background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',
+              borderRadius: '50px',
+              color: '#fff',
+              textDecoration: 'none',
+              fontWeight: '600',
+              fontSize: '0.95rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 4px 15px rgba(139, 119, 101, 0.3)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(139, 119, 101, 0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(139, 119, 101, 0.3)';
+            }}
+          >
+            🛒 Order Online
           </a>
         </div>
       </div>
@@ -571,12 +604,15 @@ const RestaurantWebsite = () => {
               )}
 
               {/* Add to Order button */}
-              <button
+              <a
+                href={RESTAURANT_INFO.squareUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   width: '100%',
                   padding: '1.25rem',
                   marginTop: '2rem',
-                  background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',  // MODIFY: Button color
+                  background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',
                   border: 'none',
                   borderRadius: '15px',
                   color: '#fff',
@@ -587,7 +623,10 @@ const RestaurantWebsite = () => {
                   fontFamily: '"Inter", sans-serif',
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase',
-                  boxShadow: '0 10px 30px rgba(139, 119, 101, 0.3)'
+                  boxShadow: '0 10px 30px rgba(139, 119, 101, 0.3)',
+                  textDecoration: 'none',
+                  display: 'block',
+                  textAlign: 'center'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
@@ -597,10 +636,9 @@ const RestaurantWebsite = () => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = '0 10px 30px rgba(139, 119, 101, 0.3)';
                 }}              
-                >
-                Add to Order • ${calculatePrice()}
-              </button>
-            </div>
+              >
+                Order on Square
+              </a>            </div>
           </div>
         </div>
       )}
