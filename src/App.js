@@ -10,7 +10,7 @@ const RESTAURANT_INFO = {
   name: "Leung Noodle",
   tagline: "Authentic Vietnamese Noodles",
   address: "2859 Senter Rd, San Jose, CA, 95111",
-  phone: "(408) 622-8352",
+  phone: "(408) 705-9848",
   hours: "Mon-Sun: 10:00 AM - 9:00 PM"
 };
 
