@@ -121,7 +121,7 @@ const RestaurantWebsite = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+      background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
       color: '#2d2d2d',
       fontFamily: '"Crimson Pro", Georgia, serif'
     }}>
@@ -283,12 +283,12 @@ const RestaurantWebsite = () => {
                 padding: '0.75rem 2rem',
                 background: activeCategory === index 
                   ? 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)'  // MODIFY: Active tab color
-                  : 'rgba(210,195,170,0.2)',
+                  : 'rgba(196,154,108,0.25)',
                 border: activeCategory === index 
                   ? 'none'
-                  : '1px solid rgba(139,119,101,0.3)',
+                  : '1px solid rgba(139,119,101,0.5)',
                 borderRadius: '50px',
-                color: activeCategory === index ? '#fff' : '#5d4e37',
+                color: activeCategory === index ? '#fff' : '#3d2817',
                 fontSize: '1rem',
                 fontWeight: activeCategory === index ? '500' : '300',
                 cursor: 'pointer',
