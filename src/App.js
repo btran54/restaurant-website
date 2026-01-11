@@ -357,9 +357,11 @@ const RestaurantWebsite = () => {
     }}>
       {/* Header with restaurant name and logo */}
       <header style={{
-        background: 'linear-gradient(180deg, rgba(245,241,232,0.95) 0%, rgba(250,247,242,0.9) 100%)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(210,195,170,0.3)',        
+        backgroundImage: 'url(/images/gallery/logo.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        borderBottom: '1px solid rgba(210,195,170,0.3)',
         zIndex: 100,
         animation: 'slideDown 0.6s ease-out'
       }}>
@@ -372,13 +374,6 @@ const RestaurantWebsite = () => {
           alignItems: 'center',
           gap: '1rem'
         }}>
-          {/* Logo emoji - MODIFY or replace with <img src="logo.png" /> */}
-          <div style={{
-            marginBottom: '-0.5rem'
-          }}>
-            <img src="/images/gallery/logo.png" alt="Leung Noodle Logo" style={{ height: '12rem' }} />
-          </div>
-          
           {/* Restaurant name */}
           <h1 style={{
             fontSize: 'clamp(2rem, 5vw, 3.5rem)',
