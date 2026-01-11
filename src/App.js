@@ -273,6 +273,20 @@ const MENU_DATA = {
           description: "",
           basePrice: 1.25,
           image: "🍵"
+        },
+        {
+          id: 32,
+          name: "Tra Chanh Mat Ong",
+          description: "Honey Lemon Tea",
+          basePrice: 5.50,
+          image: ""
+        },
+        {
+          id: 33,
+          name: "Chanh Day Mat Ong",
+          description: "Passion Fruit Honey Drink",
+          basePrice: 5.50,
+          image: ""
         }
       ]
     }
@@ -360,9 +374,10 @@ const RestaurantWebsite = () => {
         }}>
           {/* Logo emoji - MODIFY or replace with <img src="logo.png" /> */}
           <div style={{
-            fontSize: '4rem',
             marginBottom: '-0.5rem'
-          }}>🍜</div>
+          }}>
+            <img src="logo.png" alt="Leung Noodle Logo" style={{ height: '4rem' }} />
+          </div>
           
           {/* Restaurant name */}
           <h1 style={{
