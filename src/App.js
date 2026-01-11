@@ -376,7 +376,7 @@ const RestaurantWebsite = () => {
           <div style={{
             marginBottom: '-0.5rem'
           }}>
-            <img src="/images/logo.png" alt="Leung Noodle Logo" style={{ height: '4rem' }} />
+            <img src="/images/gallery/logo.png" alt="Leung Noodle Logo" style={{ height: '4rem' }} />
           </div>
           
           {/* Restaurant name */}
