@@ -339,7 +339,7 @@ const RestaurantWebsite = () => {
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
       color: '#2d2d2d',
-      fontFamily: '"Crimson Pro", Georgia, serif'
+      fontFamily: '"Nunito", sans, serif'
     }}>
       {/* Header with restaurant name and logo */}
       <header style={{
