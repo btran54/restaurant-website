@@ -19,7 +19,7 @@ const RESTAURANT_INFO = {
     },
     {
       name: "Silver Creek Location",  // MODIFY: Name for location 2
-      address: "3005 Silver Creek Rd, San Jose, CA, 95121",  // MODIFY: Address for location 2
+      address: "3005 Silver Creek Rd Ste #130, San Jose, CA, 95121",  // MODIFY: Address for location 2
       phone: "(408) 622-8352",  // MODIFY: Phone for location 2
       hours: "Mon-Sun: 10:00 AM - 9:00 PM"  // MODIFY: Hours for location 2
     }
