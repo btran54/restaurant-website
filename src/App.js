@@ -358,8 +358,8 @@ const RestaurantWebsite = () => {
       {/* Header with restaurant name and logo */}
       <header style={{
         backgroundImage: 'url(/images/gallery/logo.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 60%',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         borderBottom: '1px solid rgba(210,195,170,0.3)',
         zIndex: 100,
