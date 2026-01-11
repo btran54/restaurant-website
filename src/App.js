@@ -359,7 +359,7 @@ const RestaurantWebsite = () => {
       <header style={{
         backgroundImage: 'url(/images/gallery/logo.png)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center 60%',
         backgroundRepeat: 'no-repeat',
         borderBottom: '1px solid rgba(210,195,170,0.3)',
         zIndex: 100,
@@ -368,7 +368,7 @@ const RestaurantWebsite = () => {
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto',
-          padding: '2rem',
+          padding: '4rem 2rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
