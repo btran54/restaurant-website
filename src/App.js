@@ -339,7 +339,7 @@ const RestaurantWebsite = () => {
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
       color: '#2d2d2d',
-      fontFamily: '"Nunito", sans, serif'
+      fontFamily: '"Nunito", sans-serif'
     }}>
       {/* Header with restaurant name and logo */}
       <header style={{
@@ -965,7 +965,7 @@ const RestaurantWebsite = () => {
           ============================================================================
           CSS animations and global styles */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Nunito:wght@300;400;500;600&display=swap');
         
         /* Fade in animation */
         @keyframes fadeIn {
