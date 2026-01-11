@@ -271,8 +271,8 @@ const ContactUs = () => {
           {/* Location cards */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
-            gap: '3rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))',
+            gap: '2rem'
           }}>
             {RESTAURANT_INFO.locations.map((location, index) => (
               <div
@@ -281,7 +281,7 @@ const ContactUs = () => {
                   background: 'linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(245,241,232,0.6) 100%)',
                   border: '1px solid rgba(210,195,170,0.4)',
                   borderRadius: '20px',
-                  padding: '2rem',
+                  padding: 'clamp(1rem, 4vw, 2rem)',
                   boxShadow: '0 10px 30px rgba(139, 119, 101, 0.1)',
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease'
                 }}
@@ -369,8 +369,9 @@ const ContactUs = () => {
                 <div style={{
                   borderRadius: '12px',
                   overflow: 'hidden',
-                  height: '250px',
-                  border: '1px solid rgba(210, 180, 140, 0.3)'
+                  height: 'clamp(200px, 40vw, 300px)',
+                  border: '1px solid rgba(210, 180, 140, 0.3)',
+                  width: '100%'
                 }}>
                   <iframe
                     title={`Map of ${location.name}`}
