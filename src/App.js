@@ -372,7 +372,7 @@ const RestaurantWebsite = () => {
             margin: 0,
             textAlign: 'center',
             color: 'rgb(225, 39, 37)',
-            textShadow: '1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333, 3px 3px 0 #666, -3px -3px 0 #666, 3px -3px 0 #666, -3px 3px 0 #666, 4px 4px 0 #999, -4px -4px 0 #999, 4px -4px 0 #999, -4px 4px 0 #999'
+            textShadow: '2px 2px 0 #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333, 1px 1px 0 #333, -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333'
           }}>
             {RESTAURANT_INFO.name}
           </h1>
