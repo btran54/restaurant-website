@@ -367,14 +367,11 @@ const RestaurantWebsite = () => {
           {/* Restaurant name */}
           <h1 style={{
             fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-            fontWeight: '300',
+            fontWeight: '800',
             letterSpacing: '0.05em',
             margin: 0,
             textAlign: 'center',
-            background: 'linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%)',  // MODIFY: Gradient colors for name
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            color: 'rgb(225, 39, 37)'
           }}>
             {RESTAURANT_INFO.name}
           </h1>
