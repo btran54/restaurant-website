@@ -32,9 +32,9 @@ const Navigation = () => {
             alignItems: 'center',
             textDecoration: 'none',
             color: '#C49A6C',
-            fontSize: '1.5rem',
+            fontSize: 'clamp(0.85rem, 3.5vw, 1.5rem)',
             fontWeight: '800',
-            letterSpacing: '0.1em'
+            letterSpacing: 'clamp(0.02em, 0.4vw, 0.1em)'
           }}>
             LEUNG NOODLE
           </Link>
@@ -44,8 +44,8 @@ const Navigation = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '1.5rem',
-            flexWrap: 'wrap',
+            gap: 'clamp(0.2rem, 1.5vw, 1.5rem)',
+            flexWrap: 'nowrap',
             width: '100%'
           }}>
             <a
@@ -53,12 +53,13 @@ const Navigation = () => {
               style={{
                 color: '#5d4e37',
                 textDecoration: 'none',
-                fontSize: '0.9rem',
+                fontSize: 'clamp(0.55rem, 2.2vw, 1rem)',
                 fontWeight: '500',
                 fontFamily: '"Inter", sans-serif',
-                letterSpacing: '0.05em',
+                letterSpacing: 'clamp(0.01em, 0.2vw, 0.05em)',
                 textTransform: 'uppercase',
-                transition: 'color 0.3s ease'
+                transition: 'color 0.3s ease',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
               onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
@@ -79,14 +80,15 @@ const Navigation = () => {
                   background: 'none',
                   border: 'none',
                   color: showSocialDropdown ? '#C49A6C' : '#5d4e37',
-                  fontSize: '0.9rem',
+                  fontSize: 'clamp(0.55rem, 2.2vw, 1rem)',
                   fontWeight: '500',
                   fontFamily: '"Inter", sans-serif',
-                  letterSpacing: '0.05em',
+                  letterSpacing: 'clamp(0.01em, 0.2vw, 0.05em)',
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   transition: 'color 0.3s ease',
-                  padding: 0
+                  padding: 0,
+                  whiteSpace: 'nowrap'
                 }}
               >
                 Social Media ▾
@@ -196,12 +198,13 @@ const Navigation = () => {
               style={{
                 color: '#5d4e37',
                 textDecoration: 'none',
-                fontSize: '0.9rem',
+                fontSize: 'clamp(0.55rem, 2.2vw, 1rem)',
                 fontWeight: '500',
                 fontFamily: '"Inter", sans-serif',
-                letterSpacing: '0.05em',
+                letterSpacing: 'clamp(0.01em, 0.2vw, 0.05em)',
                 textTransform: 'uppercase',
-                transition: 'color 0.3s ease'
+                transition: 'color 0.3s ease',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
               onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
@@ -214,12 +217,13 @@ const Navigation = () => {
               style={{
                 color: '#5d4e37',
                 textDecoration: 'none',
-                fontSize: '0.9rem',
+                fontSize: 'clamp(0.55rem, 2.2vw, 1rem)',
                 fontWeight: '500',
                 fontFamily: '"Inter", sans-serif',
-                letterSpacing: '0.05em',
+                letterSpacing: 'clamp(0.01em, 0.2vw, 0.05em)',
                 textTransform: 'uppercase',
-                transition: 'color 0.3s ease'
+                transition: 'color 0.3s ease',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
               onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
@@ -260,17 +264,12 @@ const Navigation = () => {
           .nav-items a:nth-child(4) {
             margin-left: auto;
           }
-
-          .nav-items a,
-          .nav-items button {
-            font-size: 1rem !important;
-          }
         }
 
         /* Mobile view - logo on top, items below */
         @media (max-width: 768px) {
           nav {
-            padding: 0.75rem 1rem !important;
+            padding: 0.5rem 0.25rem !important;
           }
 
           .nav-container {
@@ -278,20 +277,9 @@ const Navigation = () => {
             gap: 0.5rem !important;
           }
 
-          .nav-logo {
-            font-size: 1.1rem !important;
-          }
-
           .nav-items {
-            justify-content: center !important;
-            gap: 0.5rem !important;
+            justify-content: space-evenly !important;
             flex-wrap: nowrap !important;
-          }
-
-          .nav-items a,
-          .nav-items button {
-            font-size: 0.7rem !important;
-            white-space: nowrap !important;
           }
         }
       `}</style>
