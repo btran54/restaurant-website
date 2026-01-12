@@ -269,23 +269,29 @@ const Navigation = () => {
 
         /* Mobile view - logo on top, items below */
         @media (max-width: 768px) {
+          nav {
+            padding: 0.75rem 1rem !important;
+          }
+
           .nav-container {
             flex-direction: column !important;
-            gap: 1rem !important;
+            gap: 0.5rem !important;
           }
 
           .nav-logo {
-            font-size: 1.2rem !important;
+            font-size: 1.1rem !important;
           }
 
           .nav-items {
             justify-content: center !important;
-            gap: 1rem !important;
+            gap: 0.5rem !important;
+            flex-wrap: nowrap !important;
           }
 
           .nav-items a,
           .nav-items button {
-            font-size: 0.85rem !important;
+            font-size: 0.7rem !important;
+            white-space: nowrap !important;
           }
         }
       `}</style>
