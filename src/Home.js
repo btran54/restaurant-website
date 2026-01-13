@@ -950,7 +950,7 @@ const Home = () => {
           fontSize: '0.9rem',
           fontFamily: '"Inter", sans-serif'
         }}>
-          © 2026 {RESTAURANT_INFO.name}. All rights reserved.  {/* MODIFY: Update year as needed */}
+          © 2021 {RESTAURANT_INFO.name}. All rights reserved.  {/* MODIFY: Update year as needed */}
         </p>
       </footer>
       </div>
