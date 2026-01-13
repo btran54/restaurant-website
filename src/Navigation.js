@@ -13,7 +13,7 @@ const Navigation = () => {
         right: 0,
         background: 'rgba(245, 241, 232, 0.95)',
         backdropFilter: 'blur(10px)',
-        padding: '1rem 2rem',
+        padding: '0.75rem 0.5rem',
         zIndex: 1000,
         borderBottom: '1px solid rgba(210, 180, 140, 0.3)',
         boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
@@ -24,39 +24,46 @@ const Navigation = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '1rem'
+          gap: '0.75rem'
         }}>
-          {/* Center Logo - Shows on top for mobile */}
+          {/* Center Logo */}
           <Link to="/" className="nav-logo" style={{
             display: 'flex',
             alignItems: 'center',
             textDecoration: 'none',
             color: '#C49A6C',
-            fontSize: 'clamp(0.85rem, 3.5vw, 1.5rem)',
+            fontSize: '1.25rem',
             fontWeight: '800',
-            letterSpacing: 'clamp(0.02em, 0.4vw, 0.1em)'
+            letterSpacing: '0.05em'
           }}>
             LEUNG NOODLE
           </Link>
 
-          {/* Navigation items - Shows below logo */}
-          <div className="nav-items" style={{
+          {/* Navigation items wrapper for mobile */}
+          <div className="nav-items-wrapper" style={{
             display: 'flex',
+            gap: '0.5rem',
+            width: '100%',
             justifyContent: 'center',
-            alignItems: 'center',
-            gap: 'clamp(0.2rem, 1.5vw, 1.5rem)',
-            flexWrap: 'nowrap',
-            width: '100%'
+            alignItems: 'center'
           }}>
+            {/* Left side navigation items */}
+            <div className="nav-left" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              justifyContent: 'center'
+            }}>
             <a
               href="/#menu"
+              className="nav-link"
               style={{
                 color: '#5d4e37',
                 textDecoration: 'none',
-                fontSize: 'clamp(0.55rem, 2.2vw, 1rem)',
+                fontSize: '0.7rem',
                 fontWeight: '500',
                 fontFamily: '"Inter", sans-serif',
-                letterSpacing: 'clamp(0.01em, 0.2vw, 0.05em)',
+                letterSpacing: '0.02em',
                 textTransform: 'uppercase',
                 transition: 'color 0.3s ease',
                 whiteSpace: 'nowrap'
@@ -76,14 +83,15 @@ const Navigation = () => {
               onMouseLeave={() => setShowSocialDropdown(false)}
             >
               <button
+                className="nav-link"
                 style={{
                   background: 'none',
                   border: 'none',
                   color: showSocialDropdown ? '#C49A6C' : '#5d4e37',
-                  fontSize: 'clamp(0.55rem, 2.2vw, 1rem)',
+                  fontSize: '0.7rem',
                   fontWeight: '500',
                   fontFamily: '"Inter", sans-serif',
-                  letterSpacing: 'clamp(0.01em, 0.2vw, 0.05em)',
+                  letterSpacing: '0.02em',
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   transition: 'color 0.3s ease',
@@ -192,16 +200,25 @@ const Navigation = () => {
                 </div>
               )}
             </div>
+            </div>
 
+            {/* Right side navigation items */}
+            <div className="nav-right" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              justifyContent: 'center'
+            }}>
             <a
               href="/#gallery"
+              className="nav-link"
               style={{
                 color: '#5d4e37',
                 textDecoration: 'none',
-                fontSize: 'clamp(0.55rem, 2.2vw, 1rem)',
+                fontSize: '0.7rem',
                 fontWeight: '500',
                 fontFamily: '"Inter", sans-serif',
-                letterSpacing: 'clamp(0.01em, 0.2vw, 0.05em)',
+                letterSpacing: '0.02em',
                 textTransform: 'uppercase',
                 transition: 'color 0.3s ease',
                 whiteSpace: 'nowrap'
@@ -214,13 +231,14 @@ const Navigation = () => {
 
             <Link
               to="/contact"
+              className="nav-link"
               style={{
                 color: '#5d4e37',
                 textDecoration: 'none',
-                fontSize: 'clamp(0.55rem, 2.2vw, 1rem)',
+                fontSize: '0.7rem',
                 fontWeight: '500',
                 fontFamily: '"Inter", sans-serif',
-                letterSpacing: 'clamp(0.01em, 0.2vw, 0.05em)',
+                letterSpacing: '0.02em',
                 textTransform: 'uppercase',
                 transition: 'color 0.3s ease',
                 whiteSpace: 'nowrap'
@@ -230,56 +248,65 @@ const Navigation = () => {
             >
               Contact Us
             </Link>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* CSS for responsive behavior */}
       <style>{`
-        /* Desktop view - horizontal layout with logo in center */
+        /* Desktop view - horizontal split layout with logo in center */
         @media (min-width: 769px) {
+          nav {
+            padding: 1rem 2rem !important;
+          }
+
           .nav-container {
             flex-direction: row !important;
-            justify-content: space-between !important;
-            gap: 2rem !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 0 !important;
+          }
+
+          .nav-items-wrapper {
+            display: contents !important;
           }
 
           .nav-logo {
-            order: 2;
+            order: 1 !important;
+            font-size: 1.5rem !important;
+            letter-spacing: 0.1em !important;
             flex: 0 0 auto !important;
+            margin: 0 3rem !important;
           }
 
-          .nav-items {
-            order: 1;
-            flex: 1 !important;
-            justify-content: space-between !important;
+          .nav-left {
+            order: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 1.5rem !important;
+            justify-content: flex-end !important;
           }
 
-          .nav-items a:nth-child(1),
-          .nav-items > div:nth-child(2) {
-            margin-right: auto;
+          .nav-right {
+            order: 2 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 1.5rem !important;
+            justify-content: flex-start !important;
           }
 
-          .nav-items a:nth-child(3),
-          .nav-items a:nth-child(4) {
-            margin-left: auto;
+          .nav-link {
+            font-size: 1rem !important;
+            letter-spacing: 0.05em !important;
           }
         }
 
-        /* Mobile view - logo on top, items below */
+        /* Mobile view - logo on top, items in row below */
         @media (max-width: 768px) {
-          nav {
-            padding: 0.5rem 0.25rem !important;
-          }
-
-          .nav-container {
-            flex-direction: column !important;
+          .nav-left,
+          .nav-right {
             gap: 0.5rem !important;
-          }
-
-          .nav-items {
-            justify-content: space-evenly !important;
-            flex-wrap: nowrap !important;
           }
         }
       `}</style>
