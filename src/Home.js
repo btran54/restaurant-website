@@ -328,22 +328,6 @@ const Home = () => {
     setCustomizations({});
   };
 
-  // Function to calculate price with modifiers
-  const calculatePrice = () => {
-    if (!selectedItem) return 0;
-    let price = selectedItem.basePrice;
-
-    // MODIFY: Add custom price modifiers based on selections
-    if (customizations.protein === "Shrimp" || customizations.protein === "Mixed Seafood") {
-      price += 2;    // MODIFY: Change upcharge for premium proteins
-    }
-    if (customizations.protein === "Mixed") {
-      price += 1.5;  // MODIFY: Change upcharge for mixed proteins
-    }
-
-    return price.toFixed(2);
-  };
-
   return (
     <div style={{
       minHeight: '100vh',
@@ -921,7 +905,7 @@ const Home = () => {
             >
               <img
                 src={imageUrl}
-                alt={`${RESTAURANT_INFO.name} - Photo ${index + 1}`}
+                alt={`${RESTAURANT_INFO.locations[index]?.name || RESTAURANT_INFO.name}`}
                 style={{
                   width: '100%',
                   height: '300px',
