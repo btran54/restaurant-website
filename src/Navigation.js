@@ -52,154 +52,166 @@ const Navigation = () => {
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              height: '100%'
             }}>
-            <a
-              href="/#menu"
-              className="nav-link"
-              style={{
-                color: '#5d4e37',
-                textDecoration: 'none',
-                fontSize: '0.7rem',
-                fontWeight: '500',
-                fontFamily: '"Inter", sans-serif',
-                letterSpacing: '0.02em',
-                textTransform: 'uppercase',
-                transition: 'color 0.3s ease',
-                whiteSpace: 'nowrap'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
-            >
-              Menu
-            </a>
-
-            {/* Social Media Dropdown */}
-            <div
-              style={{
-                position: 'relative'
-              }}
-              onMouseEnter={() => setShowSocialDropdown(true)}
-              onMouseLeave={() => setShowSocialDropdown(false)}
-            >
-              <button
+              <a
+                href="/#menu"
                 className="nav-link"
                 style={{
-                  background: 'none',
-                  border: 'none',
-                  color: showSocialDropdown ? '#C49A6C' : '#5d4e37',
+                  color: '#5d4e37',
+                  textDecoration: 'none',
                   fontSize: '0.7rem',
                   fontWeight: '500',
                   fontFamily: '"Inter", sans-serif',
                   letterSpacing: '0.02em',
                   textTransform: 'uppercase',
-                  cursor: 'pointer',
                   transition: 'color 0.3s ease',
-                  padding: 0,
-                  whiteSpace: 'nowrap'
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: '100%'
                 }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
               >
-                Social Media ▾
-              </button>
+                Menu
+              </a>
 
-              {showSocialDropdown && (
-                <div style={{
-                  position: 'absolute',
-                  top: '100%',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  paddingTop: '0.5rem',
-                  zIndex: 1001
-                }}>
+              {/* Social Media Dropdown */}
+              <div
+                style={{
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: '100%'
+                }}
+                onMouseEnter={() => setShowSocialDropdown(true)}
+                onMouseLeave={() => setShowSocialDropdown(false)}
+              >
+                <button
+                  className="nav-link"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: showSocialDropdown ? '#C49A6C' : '#5d4e37',
+                    fontSize: '0.7rem',
+                    fontWeight: '500',
+                    fontFamily: '"Inter", sans-serif',
+                    letterSpacing: '0.02em',
+                    textTransform: 'uppercase',
+                    cursor: 'pointer',
+                    transition: 'color 0.3s ease',
+                    padding: 0,
+                    margin: 0,
+                    whiteSpace: 'nowrap',
+                    display: 'flex',
+                    alignItems: 'center',
+                    height: '100%',
+                    lineHeight: 'normal'
+                  }}
+                >
+                  Social Media ▾
+                </button>
+
+                {showSocialDropdown && (
                   <div style={{
-                    background: 'rgba(245, 241, 232, 0.98)',
-                    backdropFilter: 'blur(10px)',
-                    borderRadius: '12px',
-                    padding: '0.5rem',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
-                    border: '1px solid rgba(210, 180, 140, 0.3)',
-                    minWidth: '160px',
-                    animation: 'fadeIn 0.2s ease-out'
+                    position: 'absolute',
+                    top: '100%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    paddingTop: '0.5rem',
+                    zIndex: 1001
                   }}>
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'block',
-                        padding: '0.75rem 1rem',
-                        color: '#5d4e37',
-                        textDecoration: 'none',
-                        fontSize: '0.95rem',
-                        fontFamily: '"Inter", sans-serif',
-                        borderRadius: '8px',
-                        transition: 'all 0.2s ease'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(196, 154, 108, 0.2)';
-                        e.currentTarget.style.color = '#C49A6C';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'transparent';
-                        e.currentTarget.style.color = '#5d4e37';
-                      }}
-                    >
-                      Instagram
-                    </a>
-                    <a
-                      href="https://facebook.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'block',
-                        padding: '0.75rem 1rem',
-                        color: '#5d4e37',
-                        textDecoration: 'none',
-                        fontSize: '0.95rem',
-                        fontFamily: '"Inter", sans-serif',
-                        borderRadius: '8px',
-                        transition: 'all 0.2s ease'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(196, 154, 108, 0.2)';
-                        e.currentTarget.style.color = '#C49A6C';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'transparent';
-                        e.currentTarget.style.color = '#5d4e37';
-                      }}
-                    >
-                      Facebook
-                    </a>
-                    <a
-                      href="https://yelp.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'block',
-                        padding: '0.75rem 1rem',
-                        color: '#5d4e37',
-                        textDecoration: 'none',
-                        fontSize: '0.95rem',
-                        fontFamily: '"Inter", sans-serif',
-                        borderRadius: '8px',
-                        transition: 'all 0.2s ease'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(196, 154, 108, 0.2)';
-                        e.currentTarget.style.color = '#C49A6C';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'transparent';
-                        e.currentTarget.style.color = '#5d4e37';
-                      }}
-                    >
-                      Yelp
-                    </a>
+                    <div style={{
+                      background: 'rgba(245, 241, 232, 0.98)',
+                      backdropFilter: 'blur(10px)',
+                      borderRadius: '12px',
+                      padding: '0.5rem',
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                      border: '1px solid rgba(210, 180, 140, 0.3)',
+                      minWidth: '160px',
+                      animation: 'fadeIn 0.2s ease-out'
+                    }}>
+                      <a
+                        href="https://instagram.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'block',
+                          padding: '0.75rem 1rem',
+                          color: '#5d4e37',
+                          textDecoration: 'none',
+                          fontSize: '0.95rem',
+                          fontFamily: '"Inter", sans-serif',
+                          borderRadius: '8px',
+                          transition: 'all 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = 'rgba(196, 154, 108, 0.2)';
+                          e.currentTarget.style.color = '#C49A6C';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.color = '#5d4e37';
+                        }}
+                      >
+                        Instagram
+                      </a>
+                      <a
+                        href="https://facebook.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'block',
+                          padding: '0.75rem 1rem',
+                          color: '#5d4e37',
+                          textDecoration: 'none',
+                          fontSize: '0.95rem',
+                          fontFamily: '"Inter", sans-serif',
+                          borderRadius: '8px',
+                          transition: 'all 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = 'rgba(196, 154, 108, 0.2)';
+                          e.currentTarget.style.color = '#C49A6C';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.color = '#5d4e37';
+                        }}
+                      >
+                        Facebook
+                      </a>
+                      <a
+                        href="https://yelp.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'block',
+                          padding: '0.75rem 1rem',
+                          color: '#5d4e37',
+                          textDecoration: 'none',
+                          fontSize: '0.95rem',
+                          fontFamily: '"Inter", sans-serif',
+                          borderRadius: '8px',
+                          transition: 'all 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = 'rgba(196, 154, 108, 0.2)';
+                          e.currentTarget.style.color = '#C49A6C';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.color = '#5d4e37';
+                        }}
+                      >
+                        Yelp
+                      </a>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
             </div>
 
             {/* Right side navigation items */}
@@ -207,47 +219,54 @@ const Navigation = () => {
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              height: '100%'
             }}>
-            <a
-              href="/#gallery"
-              className="nav-link"
-              style={{
-                color: '#5d4e37',
-                textDecoration: 'none',
-                fontSize: '0.7rem',
-                fontWeight: '500',
-                fontFamily: '"Inter", sans-serif',
-                letterSpacing: '0.02em',
-                textTransform: 'uppercase',
-                transition: 'color 0.3s ease',
-                whiteSpace: 'nowrap'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
-            >
-              Gallery
-            </a>
+              <a
+                href="/#gallery"
+                className="nav-link"
+                style={{
+                  color: '#5d4e37',
+                  textDecoration: 'none',
+                  fontSize: '0.7rem',
+                  fontWeight: '500',
+                  fontFamily: '"Inter", sans-serif',
+                  letterSpacing: '0.02em',
+                  textTransform: 'uppercase',
+                  transition: 'color 0.3s ease',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
+              >
+                Gallery
+              </a>
 
-            <Link
-              to="/contact"
-              className="nav-link"
-              style={{
-                color: '#5d4e37',
-                textDecoration: 'none',
-                fontSize: '0.7rem',
-                fontWeight: '500',
-                fontFamily: '"Inter", sans-serif',
-                letterSpacing: '0.02em',
-                textTransform: 'uppercase',
-                transition: 'color 0.3s ease',
-                whiteSpace: 'nowrap'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
-            >
-              Contact Us
-            </Link>
+              <Link
+                to="/contact"
+                className="nav-link"
+                style={{
+                  color: '#5d4e37',
+                  textDecoration: 'none',
+                  fontSize: '0.7rem',
+                  fontWeight: '500',
+                  fontFamily: '"Inter", sans-serif',
+                  letterSpacing: '0.02em',
+                  textTransform: 'uppercase',
+                  transition: 'color 0.3s ease',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
