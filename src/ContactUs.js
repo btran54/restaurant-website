@@ -1,5 +1,6 @@
 import { MapPin, Clock, Phone } from 'lucide-react';
 import Navigation from './Navigation';
+import translations from './translations';
 
 const RESTAURANT_INFO = {
   name: "Leung Noodle",
@@ -19,7 +20,8 @@ const RESTAURANT_INFO = {
   ]
 };
 
-const ContactUs = () => {
+const ContactUs = ({ language, toggleLanguage }) => {
+  const t = translations[language];
   return (
     <div style={{
       minHeight: '100vh',
@@ -28,7 +30,7 @@ const ContactUs = () => {
       fontFamily: '"Nunito", sans-serif'
     }}>
       {/* Navigation Bar */}
-      <Navigation />
+      <Navigation language={language} toggleLanguage={toggleLanguage} />
 
       {/* Contact Us Section */}
       <section style={{
@@ -47,7 +49,7 @@ const ContactUs = () => {
             color: '#3d3d3d',
             letterSpacing: '0.05em'
           }}>
-            Contact Us
+            {t.contact.title}
           </h2>
 
           {/* Location cards */}
@@ -82,7 +84,7 @@ const ContactUs = () => {
                   marginBottom: '1.5rem',
                   color: '#3d3d3d'
                 }}>
-                  {location.name}
+                  {index === 0 ? t.contact.senterLocation : t.contact.silverCreekLocation}
                 </h3>
 
                 {/* Address */}
@@ -184,7 +186,7 @@ const ContactUs = () => {
           fontSize: '0.9rem',
           fontFamily: '"Inter", sans-serif'
         }}>
-          © 2026 {RESTAURANT_INFO.name}. All rights reserved.
+          © 2021 {RESTAURANT_INFO.name}. {t.home.footer}
         </p>
       </footer>
 

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import translations from './translations';
 
-const Navigation = () => {
+const Navigation = ({ language, toggleLanguage }) => {
   const [showSocialDropdown, setShowSocialDropdown] = useState(false);
+  const t = translations[language].nav;
 
   return (
     <>
@@ -75,7 +77,7 @@ const Navigation = () => {
                 onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
               >
-                Menu
+                {t.menu}
               </a>
 
               {/* Social Media Dropdown */}
@@ -111,7 +113,7 @@ const Navigation = () => {
                     lineHeight: 'normal'
                   }}
                 >
-                  Social Media ▾
+                  {t.socialMedia} ▾
                 </button>
 
                 {showSocialDropdown && (
@@ -242,7 +244,7 @@ const Navigation = () => {
                 onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
               >
-                Gallery
+                {t.gallery}
               </a>
 
               <Link
@@ -265,8 +267,40 @@ const Navigation = () => {
                 onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#5d4e37'}
               >
-                Contact Us
+                {t.contactUs}
               </Link>
+
+              {/* Language Toggle Button */}
+              <button
+                onClick={toggleLanguage}
+                className="language-toggle"
+                style={{
+                  background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',
+                  border: 'none',
+                  borderRadius: '20px',
+                  padding: '0.4rem 0.8rem',
+                  color: '#fff',
+                  fontSize: '0.7rem',
+                  fontWeight: '600',
+                  fontFamily: '"Inter", sans-serif',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  boxShadow: '0 2px 8px rgba(196, 154, 108, 0.3)',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(196, 154, 108, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(196, 154, 108, 0.3)';
+                }}
+              >
+                {language === 'en' ? 'VN' : 'EN'}
+              </button>
             </div>
           </div>
         </div>
@@ -318,6 +352,11 @@ const Navigation = () => {
           .nav-link {
             font-size: 1rem !important;
             letter-spacing: 0.05em !important;
+          }
+
+          .language-toggle {
+            font-size: 0.85rem !important;
+            padding: 0.5rem 1rem !important;
           }
         }
 

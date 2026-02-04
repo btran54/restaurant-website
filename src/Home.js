@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, MapPin, Clock, Phone } from 'lucide-react';
 import Navigation from './Navigation';
+import translations from './translations';
 
 // ============================================================================
 // SECTION 1: RESTAURANT INFORMATION
@@ -46,85 +47,73 @@ const MENU_DATA = {
       items: [
         {
           id: 1,
-          name: "Nam Vang",
-          description: "Sliced pork, grounded pork, liver, heart, quail egg, shrimp, squid, fried garlic, green onion, cilantro",
+          translationKey: "namVang",
           basePrice: 15.95,
           image: "🍜"
         },
         {
           id: 2,
-          name: "Dac Biet",
-          description: "Saigon shrimp & pork (#1) with a bone marrow",
+          translationKey: "dacBiet",
           basePrice: 16.95,
           image: "🍜"
         },
         {
           id: 3,
-          name: "Do Bien",
-          description: "Shrimp, squid, fried garlic, green onion, cilantro",
+          translationKey: "doBien",
           basePrice: 16.95,
           image: "🍜"
         },
         {
           id: 4,
-          name: "Trieu Chau",
-          description: "Shrimp, squid, liver, heart, pork slices, meat ball, fried onion, green onion, cilantro, chives",
+          translationKey: "trieuChau",
           basePrice: 16.95,
           image: "🍜"
         },
         {
           id: 5,
-          name: "Suon Non",
-          description: "Pork spareribs, carrot, fried onion, green onion, cilantro, chives",
+          translationKey: "suonNon",
           basePrice: 15.95,
           image: "🍜"
         },
         {
           id: 6,
-          name: "Sui Cao",
-          description: "Shrimp wonton, fried onion, green onion, cilantro, chives",
+          translationKey: "suiCao",
           basePrice: 16.50,
           image: "🍜"
         },
         {
           id: 7,
-          name: "Hoanh Thanh",
-          description: "Wonton, BBQ pork slices, fried onion, green onion, cilantro, chives",
+          translationKey: "hoanhThanh",
           basePrice: 16.50,
           image: "🍜"
         },
         {
           id: 8,
-          name: "Xa Xiu",
-          description: "BBQ pork slices, fried onion, green onion, cilantro, chives",
+          translationKey: "xaXiu",
           basePrice: 15.95,
           image: "🍜"
         },
         {
           id: 9,
-          name: "Gio Heo",
-          description: "Pork hock, pork slices, fried onion, green onion, cilantro, chives",
+          translationKey: "gioHeo",
           basePrice: 15.95,
           image: "🍜"
         },
         {
           id: 10,
-          name: "Ga Xe",
-          description: "Shredded chicken, fried garlic, green onion, cilantro",
+          translationKey: "gaXe",
           basePrice: 15.95,
           image: "🍜"
         },
         {
           id: 11,
-          name: "Bo Vien",
-          description: "Beef meatballs, fried onion, green onion, cilantro, chives",
+          translationKey: "boVien",
           basePrice: 15.95,
           image: "🍜"
         },
         {
           id: 12,
-          name: "Hoanh Thanh La",
-          description: "Wonton skin, mini meat ball, dried shrimp, grounded pork, fried onion, green onion, cilantro, chives",
+          translationKey: "hoanhThanhLa",
           basePrice: 15.95,
           image: "🍜"
         }
@@ -138,64 +127,55 @@ const MENU_DATA = {
       items: [
         {
           id: 13,
-          name: "Xiu Mai (Meat Ball)",
-          description: "Meat ball, cilantro, green onion, fried onion",
+          translationKey: "xiuMai",
           basePrice: 6.25,
           image: "🍢"
         },
         {
           id: 14,
-          name: "Xi Quach (4 pcs) (Bone Marrow Soup)",
-          description: "Bone marrow (4), cilantro, fried garlic, green onion",
+          translationKey: "xiQuach4",
           basePrice: 13.75,
           image: "🍲"
         },
         {
           id: 15,
-          name: "Xi Quach (1 pc) (Bone Marrow Soup)",
-          description: "Bone marrow (1), cilantro, fried garlic, green onion",
+          translationKey: "xiQuach1",
           basePrice: 3.75,
           image: "🍲"
         },
         {
           id: 16,
-          name: "Soup Bo Vien (Beef Meatball Soup)",
-          description: "Beef meatball, cilantro, fried onion, green onion",
+          translationKey: "soupBoVien",
           basePrice: 6.75,
           image: "🍲"
         },
         {
           id: 17,
-          name: "Ha Cao Chien (Fried Shrimp Dumplings)",
-          description: "",
+          translationKey: "haCaoChien",
           basePrice: 7.75,
           image: "🥟"
         },
         {
           id: 18,
-          name: "Sui Cao Chien (Fried Shrimp Wonton)",
-          description: "",
+          translationKey: "suiCaoChien",
           basePrice: 7.75,
           image: "🥟"
         },
         {
           id: 19,
-          name: "Hoanh Thanh Chien (Fried Pork Wonton)",
-          description: "",
+          translationKey: "hoanhThanhChien",
           basePrice: 7.75,
           image: "🥟"
         },
         {
           id: 20,
-          name: "Cha Gio Chien (Fried Egg Rolls)",
-          description: "",
+          translationKey: "chaGioChien",
           basePrice: 7.75,
           image: "🥟"
         },
         {
           id: 21,
-          name: "Banh Quay (Chinese Donut)",
-          description: "",
+          translationKey: "banhQuay",
           basePrice: 2.75,
           image: "🥟"
         }
@@ -207,85 +187,73 @@ const MENU_DATA = {
       items: [
         {
           id: 22,
-          name: "Cafe Sua Da (Vietnamese Iced Coffee)",
-          description: "",
+          translationKey: "cafeSuaDa",
           basePrice: 5.50,
           image: "☕"
         },
         {
           id: 23,
-          name: "Bong Cuc (Herbal Chrysanthemum Tea)",
-          description: "",
+          translationKey: "bongCuc",
           basePrice: 5.50,
           image: "🍵"
         },
         {
           id: 24,
-          name: "Mia Lao (Herbal Sugarcane Juice)",
-          description: "",
+          translationKey: "miaLao",
           basePrice: 5.50,
           image: "🥤"
         },
         {
           id: 25,
-          name: "Rong Bien (Herbal Seaweed Drink)",
-          description: "",
+          translationKey: "rongBien",
           basePrice: 5.50,
           image: "🧃"
         },
         {
           id: 26,
-          name: "7-Up Tac Muoi (Salted Plum 7-Up)",
-          description: "",
+          translationKey: "sevenUpTacMuoi",
           basePrice: 5.50,
           image: "🥤"
         },
         {
           id: 27,
-          name: "Tra Chanh (Lemon Iced Tea)",
-          description: "",
+          translationKey: "traChanh",
           basePrice: 5.50,
           image: "🍹"
         },
         {
           id: 28,
-          name: "Mang Cau Dam (Mashed Soursop Drink)",
-          description: "",
+          translationKey: "mangCauDam",
           basePrice: 5.50,
           image: "🍹"
         },
         {
           id: 29,
-          name: "Trai Dua (Fresh Coconut)",
-          description: "",
+          translationKey: "traiDua",
           basePrice: 5.50,
           image: "🥥"
         },
         {
           id: 30,
-          name: "Soda",
-          description: "",
+          translationKey: "soda",
           basePrice: 2.50,
           image: "🥤"
         },
         {
           id: 31,
-          name: "Tra Nong (Hot/Iced Tea)",
-          description: "",
+          translationKey: "traNong",
           basePrice: 1.25,
           image: "🍵"
         },
         {
           id: 32,
-          name: "Tra Chanh Mat Ong",
-          description: "Honey Lemon Tea",
+          translationKey: "traChanhMatOng",
           basePrice: 5.50,
           image: ""
         },
         {
           id: 33,
-          name: "Chanh Day Mat Ong",
-          description: "Passion Fruit Honey Drink",
+          translationKey: "chanhDayMatOng",
           basePrice: 5.50,
           image: ""
         }
@@ -295,7 +263,9 @@ const MENU_DATA = {
   ]
 };
 
-const Home = () => {
+const Home = ({ language, toggleLanguage }) => {
+  const t = translations[language];
+
   // State management for modal and customizations
   const [selectedItem, setSelectedItem] = useState(null);
   const [customizations, setCustomizations] = useState({});
@@ -336,7 +306,7 @@ const Home = () => {
       fontFamily: '"Nunito", sans-serif'
     }}>
       {/* Navigation Bar */}
-      <Navigation />
+      <Navigation language={language} toggleLanguage={toggleLanguage} />
 
       {/* Fixed background logo */}
       <div style={{
@@ -491,7 +461,7 @@ const Home = () => {
                 e.currentTarget.style.boxShadow = '0 4px 15px rgba(139, 119, 101, 0.3)';
               }}
             >
-              🛒 Order Online
+              🛒 {t.home.orderOnline}
             </a>
           </div>
         </div>
@@ -556,7 +526,9 @@ const Home = () => {
                 }
               }}
             >
-              {category.name}
+              {index === 0 ? t.menu.signatureNoodles : 
+              index === 1 ? t.menu.appetizers : 
+              t.menu.beverages}
             </button>
           ))}
         </div>
@@ -609,7 +581,7 @@ const Home = () => {
                 marginBottom: '0.5rem',
                 color: '#3d3d3d'
               }}>
-                {item.name}
+                {t.menu[item.translationKey]?.name || item.translationKey}
               </h3>
 
               {/* Item description */}
@@ -620,7 +592,7 @@ const Home = () => {
                 marginBottom: '1rem',
                 fontFamily: '"Inter", sans-serif'
               }}>
-                {item.description}
+                {t.menu[item.translationKey]?.description || ''}
               </p>
 
               {/* Item price */}
@@ -719,7 +691,7 @@ const Home = () => {
                   marginBottom: '0.5rem',
                   color: '#3d3d3d'
                 }}>
-                  {selectedItem.name}
+                  {t.menu[selectedItem.translationKey]?.name || selectedItem.translationKey}
                 </h2>
                 <p style={{
                   fontSize: '1rem',
@@ -727,7 +699,7 @@ const Home = () => {
                   lineHeight: '1.6',
                   fontFamily: '"Inter", sans-serif'
                 }}>
-                  {selectedItem.description}
+                  {t.menu[selectedItem.translationKey]?.description || ''}
                 </p>
               </div>
 
@@ -848,8 +820,9 @@ const Home = () => {
                   e.currentTarget.style.boxShadow = '0 10px 30px rgba(139, 119, 101, 0.3)';
                 }}
               >
-                Order on Square
-              </a>            </div>
+                {t.home.orderOnline}
+              </a>            
+            </div>
           </div>
         </div>
       )}
@@ -874,7 +847,7 @@ const Home = () => {
           color: '#3d3d3d',
           letterSpacing: '0.05em'
         }}>
-          Our Restaurant
+          {t.home.ourRestaurant}
         </h2>
 
         <div style={{
@@ -934,7 +907,7 @@ const Home = () => {
           fontSize: '0.9rem',
           fontFamily: '"Inter", sans-serif'
         }}>
-          © 2021 {RESTAURANT_INFO.name}. All rights reserved.  {/* MODIFY: Update year as needed */}
+          © 2021 {RESTAURANT_INFO.name}. {t.home.footer}
         </p>
       </footer>
       </div>
