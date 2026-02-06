@@ -13,40 +13,25 @@ const Navigation = ({ language, toggleLanguage }) => {
         top: 0,
         left: 0,
         right: 0,
-        background: 'rgba(245, 241, 232, 0.95)',
+        background: 'linear-gradient(180deg, rgba(225, 215, 200, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%)',
         backdropFilter: 'blur(10px)',
-        padding: '0.75rem 0.5rem',
+        padding: '1.75rem 2rem',
         zIndex: 1000,
         borderBottom: '1px solid rgba(210, 180, 140, 0.3)',
         boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
       }}>
         <div className="nav-container" style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
+          width: '100%',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'flex-end',
           gap: '0.75rem'
         }}>
-          {/* Center Logo */}
-          <Link to="/" className="nav-logo" style={{
-            display: 'flex',
-            alignItems: 'center',
-            textDecoration: 'none',
-            color: '#C49A6C',
-            fontSize: '1.25rem',
-            fontWeight: '800',
-            letterSpacing: '0.05em'
-          }}>
-            LEUNG NOODLE
-          </Link>
-
-          {/* Navigation items wrapper for mobile */}
+          {/* Navigation items wrapper */}
           <div className="nav-items-wrapper" style={{
             display: 'flex',
-            gap: '0.5rem',
-            width: '100%',
-            justifyContent: 'center',
+            gap: '1.5rem',
             alignItems: 'center'
           }}>
             {/* Left side navigation items */}
@@ -308,45 +293,28 @@ const Navigation = ({ language, toggleLanguage }) => {
 
       {/* CSS for responsive behavior */}
       <style>{`
-        /* Desktop view - horizontal split layout with logo in center */
+        /* Desktop view - nav items aligned to the right */
         @media (min-width: 769px) {
           nav {
-            padding: 1rem 2rem !important;
+            padding: 1.75rem 2rem !important;
           }
 
           .nav-container {
             flex-direction: row !important;
-            justify-content: center !important;
+            justify-content: flex-end !important;
             align-items: center !important;
             gap: 0 !important;
           }
 
           .nav-items-wrapper {
-            display: contents !important;
+            display: flex !important;
+            gap: 2rem !important;
           }
 
-          .nav-logo {
-            order: 1 !important;
-            font-size: 1.5rem !important;
-            letter-spacing: 0.1em !important;
-            flex: 0 0 auto !important;
-            margin: 0 3rem !important;
-          }
-
-          .nav-left {
-            order: 0 !important;
+          .nav-left, .nav-right {
             display: flex !important;
             align-items: center !important;
             gap: 1.5rem !important;
-            justify-content: flex-end !important;
-          }
-
-          .nav-right {
-            order: 2 !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 1.5rem !important;
-            justify-content: flex-start !important;
           }
 
           .nav-link {

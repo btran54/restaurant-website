@@ -321,18 +321,144 @@ const Home = ({ language, toggleLanguage }) => {
         <div style={{
           width: '100%',
           height: '100%',
-          backgroundImage: 'url(/images/gallery/logo_5.avif)',
+          backgroundImage: 'url(/images/gallery/newlogo.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }} />
+
+        {/* Hero Info Card */}
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '3rem',
+          transform: 'translateY(-50%)',
+          background: 'rgba(245, 235, 220, 0.95)',
+          borderRadius: '30px',
+          padding: '3rem 4rem',
+          width: '60%',
+          maxWidth: '750px',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+        }}>
+          <h1 style={{
+            margin: 0,
+            fontFamily: '"Crimson Pro", serif',
+            fontWeight: 600,
+            lineHeight: 1.1
+          }}>
+            <span style={{
+              display: 'block',
+              fontSize: '1.4rem',
+              color: '#5d4e37',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em'
+            }}>
+              Taste the
+            </span>
+            <span style={{
+              display: 'block',
+              fontSize: '3rem',
+              color: '#8B4513',
+              fontFamily: '"Merienda", cursive',
+              fontWeight: 700
+            }}>
+              Authentic
+            </span>
+            <span style={{
+              display: 'block',
+              fontSize: '1.2rem',
+              color: '#5d4e37',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              marginTop: '0.25rem'
+            }}>
+              of
+            </span>
+            <span style={{
+              display: 'block',
+              fontSize: '2.2rem',
+              color: '#5d4e37',
+              fontFamily: '"Merienda", cursive',
+              fontWeight: 700
+            }}>
+              Hu Tieu Nam Vang
+            </span>
+          </h1>
+
+          <p style={{
+            marginTop: '1.5rem',
+            fontSize: '0.9rem',
+            color: '#5d4e37',
+            lineHeight: 1.6,
+            fontFamily: '"Nunito", sans-serif'
+          }}>
+            Experience the rich flavors of traditional Vietnamese noodle soup, crafted with authentic recipes passed down through generations.
+          </p>
+
+          <div style={{
+            display: 'flex',
+            gap: '1rem',
+            marginTop: '1.5rem'
+          }}>
+            <a
+              href="#menu"
+              style={{
+                padding: '0.6rem 1.5rem',
+                border: '2px solid #5d4e37',
+                borderRadius: '25px',
+                color: '#5d4e37',
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: '0.85rem',
+                transition: 'all 0.3s ease',
+                background: 'transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#5d4e37';
+                e.currentTarget.style.color = '#fff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = '#5d4e37';
+              }}
+            >
+              Learn More
+            </a>
+            <a
+              href={RESTAURANT_INFO.squareUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '0.6rem 1.5rem',
+                border: '2px solid #5d4e37',
+                borderRadius: '25px',
+                color: '#5d4e37',
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: '0.85rem',
+                transition: 'all 0.3s ease',
+                background: 'transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#5d4e37';
+                e.currentTarget.style.color = '#fff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = '#5d4e37';
+              }}
+            >
+              Order Now
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Scrollable content container */}
       <div style={{
         position: 'relative',
         zIndex: 2,
-        paddingTop: '81vh'
+        paddingTop: '100vh'
       }}>
 
       {/* ============================================================================
@@ -376,13 +502,13 @@ const Home = ({ language, toggleLanguage }) => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  color: '#ff6b6b',  // MODIFY: Link color
+                  color: '#ff6b6b',
                   textDecoration: 'none',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#ffd93d';  // MODIFY: Hover color
+                  e.currentTarget.style.color = '#ffd93d';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
@@ -407,7 +533,7 @@ const Home = ({ language, toggleLanguage }) => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  color: '#ff6b6b',  // MODIFY: Phone link color
+                  color: '#ff6b6b',
                   textDecoration: 'none',
                   transition: 'all 0.3s ease'
                 }}
@@ -917,7 +1043,7 @@ const Home = ({ language, toggleLanguage }) => {
           ============================================================================
           CSS animations and global styles */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Merienda:wght@400;700&family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
 
         /* Fade in animation */
         @keyframes fadeIn {
