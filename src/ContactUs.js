@@ -9,13 +9,17 @@ const RESTAURANT_INFO = {
       name: "Senter Road Location",
       address: "2859 Senter Rd, San Jose, CA, 95111",
       phone: "(408) 705-9848",
-      hours: "Mon-Sun: 10:00 AM - 9:00 PM"
+      hours: "Mon-Sun: 10:00 AM - 9:00 PM",
+      image: "/images/gallery/senter.jpg",
+      yelp: "https://www.yelp.com/biz/leung-noodle-san-jose-3?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)"
     },
     {
       name: "Silver Creek Location",
       address: "3005 Silver Creek Rd Ste #130, San Jose, CA, 95121",
       phone: "(408) 622-8352",
-      hours: "Mon-Sun: 10:00 AM - 9:00 PM"
+      hours: "Mon-Sun: 10:00 AM - 9:00 PM",
+      image: "/images/gallery/silver-creek.jpg",
+      yelp: "https://www.yelp.com/biz/leung-noodle-san-jose?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)"
     }
   ]
 };
@@ -33,9 +37,9 @@ const ContactUs = ({ language, toggleLanguage }) => {
       <Navigation language={language} toggleLanguage={toggleLanguage} />
 
       {/* Contact Us Section */}
-      <section style={{
-        paddingTop: '100px',
-        padding: '4rem 2rem'
+      <section className="page-content" style={{
+        padding: '4rem 2rem',
+        paddingTop: '140px'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -81,10 +85,31 @@ const ContactUs = ({ language, toggleLanguage }) => {
                 <h3 style={{
                   fontSize: '1.5rem',
                   fontWeight: '400',
-                  marginBottom: '1.5rem',
-                  color: '#3d3d3d'
+                  marginBottom: '1.5rem'
                 }}>
-                  {index === 0 ? t.contact.senterLocation : t.contact.silverCreekLocation}
+                  <a
+                    href={location.yelp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: '#3d3d3d',
+                      textDecoration: 'underline',
+                      textUnderlineOffset: '4px',
+                      transition: 'color 0.3s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#C49A6C'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#3d3d3d'}
+                  >
+                    {index === 0 ? t.contact.senterLocation : t.contact.silverCreekLocation}
+                    <img
+                      src="https://www.yelp.com/favicon.ico"
+                      alt="Yelp"
+                      style={{ width: '20px', height: '20px', textDecoration: 'none' }}
+                    />
+                  </a>
                 </h3>
 
                 {/* Address */}
@@ -174,6 +199,49 @@ const ContactUs = ({ language, toggleLanguage }) => {
         </div>
       </section>
 
+      {/* Location Images */}
+      <section style={{
+        background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
+        padding: '0 2rem 4rem'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '2rem'
+        }}>
+          {RESTAURANT_INFO.locations.map((location, index) => (
+            <div
+              key={index}
+              style={{
+                borderRadius: '20px',
+                overflow: 'hidden',
+                boxShadow: '0 10px 30px rgba(139, 119, 101, 0.2)',
+                transition: 'all 0.4s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 119, 101, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                e.currentTarget.style.boxShadow = '0 10px 30px rgba(139, 119, 101, 0.2)';
+              }}
+            >
+              <img
+                src={location.image}
+                alt={location.name}
+                style={{
+                  width: '100%',
+                  display: 'block'
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Footer */}
       <footer style={{
         borderTop: '1px solid rgba(210,195,170,0.3)',
@@ -191,11 +259,21 @@ const ContactUs = ({ language, toggleLanguage }) => {
       </footer>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Merienda:wght@400;700&family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+        html {
+          scroll-behavior: smooth;
+        }
 
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+          .page-content {
+            padding-top: 90px !important;
+          }
         }
       `}</style>
     </div>

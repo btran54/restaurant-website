@@ -4,25 +4,38 @@ const translations = {
     nav: {
       menu: "Menu",
       socialMedia: "Social Media",
-      gallery: "Gallery",
-      contactUs: "Contact Us"
+      about: "About",
+      contactUs: "Locations"
     },
-    
+
     // Home page
     home: {
       tagline: "Authentic Vietnamese Noodles",
       orderOnline: "Order Online",
       ourRestaurant: "Our Restaurant",
-      footer: "All rights reserved."
+      footer: "All rights reserved.",
+      heroTasteThe: "Taste the",
+      heroAuthenticFlavors: "Authentic Flavors",
+      heroOf: "of",
+      heroHuTieu: "Hu Tieu Nam Vang",
+      heroDescription: "Insert Text Here",
+      heroLearnMore: "Learn More",
+      heroOrderNow: "Order Now"
     },
-    
+
+    // About page
+    about: {
+      title: "About",
+      description: "Insert your about description here."
+    },
+
     // Contact page
     contact: {
-      title: "Contact Us",
+      title: "Locations",
       senterLocation: "Senter Road Location",
       silverCreekLocation: "Silver Creek Location"
     },
-    
+
     // Info bar
     info: {
       hours: "Mon-Sun: 10:00 AM - 9:00 PM"
@@ -179,21 +192,34 @@ const translations = {
     nav: {
       menu: "Thực Đơn",
       socialMedia: "Mạng Xã Hội",
-      gallery: "Thư Viện",
-      contactUs: "Liên Hệ"
+      about: "Giới Thiệu",
+      contactUs: "Địa Điểm"
     },
-    
+
     // Home page
     home: {
       tagline: "Mì Việt Nam Chính Gốc",
       orderOnline: "Đặt Hàng Trực Tuyến",
       ourRestaurant: "Nhà Hàng Của Chúng Tôi",
-      footer: "Đã đăng ký bản quyền."
+      footer: "Đã đăng ký bản quyền.",
+      heroTasteThe: "Thưởng Thức",
+      heroAuthenticFlavors: "Hương Vị Đích Thực",
+      heroOf: "của",
+      heroHuTieu: "Hủ Tiếu Nam Vang",
+      heroDescription: "Chèn văn bản ở đây",
+      heroLearnMore: "Tìm Hiểu Thêm",
+      heroOrderNow: "Đặt Hàng Ngay"
     },
-    
+
+    // About page
+    about: {
+      title: "Giới Thiệu",
+      description: "Chèn mô tả giới thiệu của bạn ở đây."
+    },
+
     // Contact page
     contact: {
-      title: "Liên Hệ Với Chúng Tôi",
+      title: "Địa Điểm",
       senterLocation: "Chi Nhánh Senter Road",
       silverCreekLocation: "Chi Nhánh Silver Creek"
     },

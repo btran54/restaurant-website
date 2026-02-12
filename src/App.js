@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Home from './Home';
 import ContactUs from './ContactUs';
+import About from './About';
 
 function App() {
   const [language, setLanguage] = useState(() => {
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home language={language} toggleLanguage={toggleLanguage} />} />
         <Route path="/contact" element={<ContactUs language={language} toggleLanguage={toggleLanguage} />} />
+        <Route path="/about" element={<About language={language} toggleLanguage={toggleLanguage} />} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, MapPin, Clock, Phone } from 'lucide-react';
+import { X } from 'lucide-react';
 import Navigation from './Navigation';
 import translations from './translations';
 
@@ -328,17 +328,18 @@ const Home = ({ language, toggleLanguage }) => {
         }} />
 
         {/* Hero Info Card */}
-        <div style={{
+        <div className="hero-card" style={{
           position: 'absolute',
           top: '50%',
           left: '3rem',
           transform: 'translateY(-50%)',
-          background: 'rgba(245, 235, 220, 0.95)',
+          background: 'rgba(245, 235, 220, 0.70)',
           borderRadius: '30px',
           padding: '3rem 4rem',
           width: '60%',
           maxWidth: '750px',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+          zIndex: 3
         }}>
           <h1 style={{
             margin: 0,
@@ -346,25 +347,25 @@ const Home = ({ language, toggleLanguage }) => {
             fontWeight: 600,
             lineHeight: 1.1
           }}>
-            <span style={{
+            <span className="hero-subtitle" style={{
               display: 'block',
               fontSize: '1.4rem',
               color: '#5d4e37',
               textTransform: 'uppercase',
               letterSpacing: '0.1em'
             }}>
-              Taste the
+              {t.home.heroTasteThe}
             </span>
-            <span style={{
+            <span className="hero-title" style={{
               display: 'block',
               fontSize: '3rem',
               color: '#8B4513',
               fontFamily: '"Merienda", cursive',
               fontWeight: 700
             }}>
-              Authentic
+              {t.home.heroAuthenticFlavors}
             </span>
-            <span style={{
+            <span className="hero-subtitle" style={{
               display: 'block',
               fontSize: '1.2rem',
               color: '#5d4e37',
@@ -372,36 +373,36 @@ const Home = ({ language, toggleLanguage }) => {
               letterSpacing: '0.05em',
               marginTop: '0.25rem'
             }}>
-              of
+              {t.home.heroOf}
             </span>
-            <span style={{
+            <span className="hero-dish-name" style={{
               display: 'block',
               fontSize: '2.2rem',
               color: '#5d4e37',
               fontFamily: '"Merienda", cursive',
               fontWeight: 700
             }}>
-              Hu Tieu Nam Vang
+              {t.home.heroHuTieu}
             </span>
           </h1>
 
-          <p style={{
+          <p className="hero-description" style={{
             marginTop: '1.5rem',
             fontSize: '0.9rem',
             color: '#5d4e37',
             lineHeight: 1.6,
             fontFamily: '"Nunito", sans-serif'
           }}>
-            Experience the rich flavors of traditional Vietnamese noodle soup, crafted with authentic recipes passed down through generations.
+            {t.home.heroDescription}
           </p>
 
-          <div style={{
+          <div className="hero-buttons" style={{
             display: 'flex',
             gap: '1rem',
             marginTop: '1.5rem'
           }}>
             <a
-              href="#menu"
+              href="/about"
               style={{
                 padding: '0.6rem 1.5rem',
                 border: '2px solid #5d4e37',
@@ -422,7 +423,7 @@ const Home = ({ language, toggleLanguage }) => {
                 e.currentTarget.style.color = '#5d4e37';
               }}
             >
-              Learn More
+              {t.home.heroLearnMore}
             </a>
             <a
               href={RESTAURANT_INFO.squareUrl}
@@ -448,7 +449,7 @@ const Home = ({ language, toggleLanguage }) => {
                 e.currentTarget.style.color = '#5d4e37';
               }}
             >
-              Order Now
+              {t.home.heroOrderNow}
             </a>
           </div>
         </div>
@@ -458,140 +459,9 @@ const Home = ({ language, toggleLanguage }) => {
       <div style={{
         position: 'relative',
         zIndex: 2,
-        paddingTop: '100vh'
+        paddingTop: '100vh',
+        pointerEvents: 'none'
       }}>
-
-      {/* ============================================================================
-          SECTION 5: INFO BAR
-          ============================================================================
-          Address, hours, and phone number bar - displays all locations */}
-      <div style={{
-        background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
-        borderBottom: '1px solid rgba(210, 180, 140, 0.3)',
-        padding: '1rem 2rem',
-        animation: 'fadeIn 0.8s ease-out 0.2s both'
-      }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1.5rem'
-        }}>
-          {/* Map through all locations and display each one */}
-          {RESTAURANT_INFO.locations.map((location, index) => (
-            <div
-              key={index}
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                gap: '2rem',
-                fontSize: '0.95rem',
-                fontFamily: '"Inter", sans-serif',
-                paddingBottom: index < RESTAURANT_INFO.locations.length - 1 ? '1.5rem' : '0',
-                borderBottom: index < RESTAURANT_INFO.locations.length - 1 ? '1px solid rgba(210, 180, 140, 0.2)' : 'none'
-              }}
-            >
-              {/* Clickable address - opens in user's map app */}
-              <a
-                href={`https://maps.google.com/?q=${encodeURIComponent(location.address)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  color: '#ff6b6b',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#ffd93d';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#ff6b6b';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <MapPin size={18} />
-                <span>{location.address}</span>
-              </a>
-
-              {/* Operating hours */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#ff6b6b' }}>
-                <Clock size={18} />
-                <span>{location.hours}</span>
-              </div>
-
-              {/* Clickable phone number */}
-              <a
-                href={`tel:${location.phone}`}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  color: '#ff6b6b',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#ffd93d';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#ff6b6b';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <Phone size={18} />
-                <span>{location.phone}</span>
-              </a>
-            </div>
-          ))}
-
-          {/* Order Online button - centered below all locations */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            paddingTop: '0.5rem'
-          }}>
-            <a
-              href={RESTAURANT_INFO.squareUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                padding: '0.5rem 1.5rem',
-                background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',
-                borderRadius: '50px',
-                color: '#fff',
-                textDecoration: 'none',
-                fontWeight: '600',
-                fontSize: '0.95rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 15px rgba(139, 119, 101, 0.3)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 6px 20px rgba(139, 119, 101, 0.4)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 15px rgba(139, 119, 101, 0.3)';
-              }}
-            >
-              🛒 {t.home.orderOnline}
-            </a>
-          </div>
-        </div>
-      </div>
 
       {/* ============================================================================
           SECTION 6: MENU SECTION
@@ -599,7 +469,8 @@ const Home = ({ language, toggleLanguage }) => {
           Category tabs and menu items grid */}
       <main id="menu" style={{
         background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
-        padding: '3rem 2rem'
+        padding: '3rem 2rem',
+        pointerEvents: 'auto'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -755,7 +626,8 @@ const Home = ({ language, toggleLanguage }) => {
             justifyContent: 'center',
             zIndex: 1000,
             padding: '2rem',
-            animation: 'fadeIn 0.3s ease-out'
+            animation: 'fadeIn 0.3s ease-out',
+            pointerEvents: 'auto'
           }}
           onClick={closeModal}
         >
@@ -779,13 +651,13 @@ const Home = ({ language, toggleLanguage }) => {
               onClick={closeModal}
               style={{
                 position: 'absolute',
-                top: '1.5rem',
-                right: '1.5rem',
-                background: 'rgba(255,255,255,0.1)',
+                top: '1rem',
+                left: '1rem',
+                background: 'rgba(139, 119, 101, 0.15)',
                 border: 'none',
                 borderRadius: '50%',
-                width: '40px',
-                height: '40px',
+                width: '36px',
+                height: '36px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -798,11 +670,11 @@ const Home = ({ language, toggleLanguage }) => {
                 e.currentTarget.style.transform = 'rotate(90deg)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(210,195,170,0.2)';
+                e.currentTarget.style.background = 'rgba(139, 119, 101, 0.15)';
                 e.currentTarget.style.transform = 'rotate(0deg)';
               }}
             >
-              <X size={20} color="#fff" />
+              <X size={18} color="#5d4e37" />
             </button>
 
             <div style={{ padding: '3rem' }}>
@@ -954,71 +826,6 @@ const Home = ({ language, toggleLanguage }) => {
       )}
 
       {/* ============================================================================
-          SECTION 9: PHOTO GALLERY
-          ============================================================================
-          Restaurant images section */}
-      <section id="gallery" style={{
-        background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
-        padding: '4rem 2rem'
-      }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto'
-        }}>
-        <h2 style={{
-          fontSize: 'clamp(2rem, 4vw, 2.5rem)',
-          fontWeight: '300',
-          textAlign: 'center',
-          marginBottom: '3rem',
-          color: '#3d3d3d',
-          letterSpacing: '0.05em'
-        }}>
-          {t.home.ourRestaurant}
-        </h2>
-
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '2rem',
-          animation: 'fadeIn 1s ease-out'
-        }}>
-          {RESTAURANT_INFO.galleryImages.map((imageUrl, index) => (
-            <div
-              key={index}
-              style={{
-                borderRadius: '20px',
-                overflow: 'hidden',
-                boxShadow: '0 10px 30px rgba(139, 119, 101, 0.2)',
-                transition: 'all 0.4s ease',
-                cursor: 'pointer',
-                animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
-                e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 119, 101, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(139, 119, 101, 0.2)';
-              }}
-            >
-              <img
-                src={imageUrl}
-                alt={`${RESTAURANT_INFO.locations[index]?.name || RESTAURANT_INFO.name}`}
-                style={{
-                  width: '100%',
-                  height: '300px',
-                  objectFit: 'cover',
-                  display: 'block'
-                }}
-              />
-            </div>
-          ))}
-        </div>
-        </div>
-      </section>
-
-      {/* ============================================================================
           SECTION 10: FOOTER
           ============================================================================
           Bottom copyright section */}
@@ -1026,7 +833,8 @@ const Home = ({ language, toggleLanguage }) => {
         borderTop: '1px solid rgba(210,195,170,0.3)',
         padding: '3rem 2rem',
         textAlign: 'center',
-        background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)'
+        background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
+        pointerEvents: 'auto'
       }}>
         <p style={{
           color: '#8B7355',  // MODIFY: Footer text color
@@ -1044,6 +852,10 @@ const Home = ({ language, toggleLanguage }) => {
           CSS animations and global styles */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Merienda:wght@400;700&family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+        html {
+          scroll-behavior: smooth;
+        }
 
         /* Fade in animation */
         @keyframes fadeIn {
@@ -1100,12 +912,39 @@ const Home = ({ language, toggleLanguage }) => {
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
-          header > div {
-            padding: 1.5rem !important;
+          .hero-card {
+            left: 1rem !important;
+            right: 1rem !important;
+            width: auto !important;
+            max-width: none !important;
+            padding: 1.5rem 1.5rem !important;
+            border-radius: 20px !important;
           }
 
-          h1 {
+          .hero-title {
             font-size: 2rem !important;
+          }
+
+          .hero-subtitle {
+            font-size: 1rem !important;
+          }
+
+          .hero-dish-name {
+            font-size: 1.5rem !important;
+          }
+
+          .hero-description {
+            font-size: 0.85rem !important;
+            margin-top: 1rem !important;
+          }
+
+          .hero-buttons {
+            margin-top: 1rem !important;
+          }
+
+          .hero-buttons a {
+            font-size: 0.8rem !important;
+            padding: 0.5rem 1.2rem !important;
           }
 
           main {
