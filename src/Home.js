@@ -318,7 +318,7 @@ const Home = ({ language, toggleLanguage }) => {
         background: 'linear-gradient(135deg, #F5F1E8 0%, #EDE8DC 100%)',
         zIndex: 1
       }}>
-        <div style={{
+        <div className="hero-bg" style={{
           width: '100%',
           height: '100%',
           backgroundImage: 'url(/images/gallery/newlogo.png)',
@@ -912,6 +912,11 @@ const Home = ({ language, toggleLanguage }) => {
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
+          .hero-bg {
+            background-image: url(/images/gallery/logo.png) !important;
+            background-size: conatain !important;
+          }
+
           .hero-card {
             left: 1rem !important;
             right: 1rem !important;

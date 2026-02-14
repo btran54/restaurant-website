@@ -26,7 +26,7 @@ const translations = {
     // About page
     about: {
       title: "About",
-      description: "Insert your about description here."
+      description: "Insert about description here."
     },
 
     // Contact page

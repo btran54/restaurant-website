@@ -46,6 +46,30 @@ const Navigation = ({ language, toggleLanguage }) => {
             />
           </a>
 
+          {/* Language Toggle Button (mobile only - next to hamburger) */}
+          <button
+            onClick={toggleLanguage}
+            className="mobile-lang-toggle"
+            style={{
+              display: 'none',
+              background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',
+              border: 'none',
+              borderRadius: '20px',
+              padding: '0.45rem 0.9rem',
+              color: '#fff',
+              fontSize: '0.85rem',
+              fontWeight: '600',
+              fontFamily: '"Inter", sans-serif',
+              cursor: 'pointer',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              boxShadow: '0 2px 8px rgba(196, 154, 108, 0.3)',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            {language === 'en' ? 'VN' : 'EN'}
+          </button>
+
           {/* Hamburger button (mobile only) */}
           <button
             className="hamburger-btn"
@@ -274,10 +298,10 @@ const Navigation = ({ language, toggleLanguage }) => {
                 {t.contactUs}
               </Link>
 
-              {/* Language Toggle Button */}
+              {/* Language Toggle Button (desktop only - inside nav items) */}
               <button
                 onClick={toggleLanguage}
-                className="language-toggle"
+                className="language-toggle desktop-lang-toggle"
                 style={{
                   background: 'linear-gradient(135deg, #C49A6C 0%, #D4AF7A 100%)',
                   border: 'none',
@@ -371,6 +395,10 @@ const Navigation = ({ language, toggleLanguage }) => {
           .hamburger-btn {
             display: none !important;
           }
+
+          .mobile-lang-toggle {
+            display: none !important;
+          }
         }
 
         /* Mobile view */
@@ -401,20 +429,19 @@ const Navigation = ({ language, toggleLanguage }) => {
 
           .nav-items-wrapper {
             display: none !important;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: linear-gradient(180deg, rgba(245, 241, 232, 0.99) 0%, rgba(255, 255, 255, 0.98) 100%);
-            backdrop-filter: blur(10px);
-            flex-direction: column;
-            align-items: stretch;
-            padding: 1rem 1.5rem;
-            gap: 0;
-            border-bottom: 1px solid rgba(210, 180, 140, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            height: auto;
+            position: fixed !important;
+            top: 70px !important;
+            left: 0 !important;
+            right: 0 !important;
+            background: linear-gradient(180deg, #F5F1E8 0%, #FFFFFF 100%) !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            padding: 1rem 1.5rem 1.5rem !important;
+            gap: 0 !important;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.3) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+            z-index: 999 !important;
+            height: auto !important;
           }
 
           .nav-items-wrapper.mobile-open {
@@ -433,10 +460,13 @@ const Navigation = ({ language, toggleLanguage }) => {
             flex-direction: column !important;
             align-items: stretch !important;
             height: auto !important;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.15);
+            padding-bottom: 0.5rem !important;
           }
 
           .social-dropdown-container .nav-link {
             width: 100%;
+            border-bottom: none !important;
           }
 
           .social-dropdown {
@@ -454,11 +484,12 @@ const Navigation = ({ language, toggleLanguage }) => {
             padding: 0 0 0 1rem !important;
           }
 
-          .language-toggle {
-            margin-top: 0.5rem;
-            align-self: flex-start;
-            font-size: 0.85rem !important;
-            padding: 0.5rem 1rem !important;
+          .desktop-lang-toggle {
+            display: none !important;
+          }
+
+          .mobile-lang-toggle {
+            display: block !important;
           }
 
           .mobile-overlay {
